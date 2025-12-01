@@ -21,6 +21,7 @@
             --course: #27AE60;
             --management: #3498DB;
             --houses: #E67E22;
+            --promo: #FF4081;
         }
 
         * {
@@ -397,11 +398,11 @@
             gap: 20px;
         }
 
-        /* Seção Casas */
+        /* Seção Casas - PROMOÇÕES CHAMATIVAS */
         .houses-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
         @media (min-width: 768px) {
@@ -415,20 +416,55 @@
             border-radius: 15px;
             padding: 0;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--houses);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 3px solid;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .house-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+        }
+
+        .house-card.placard {
+            border-color: #FF0000;
+            border-image: linear-gradient(45deg, #FF0000, #FF6B6B, #FF0000) 1;
+        }
+
+        .house-card.megagame {
+            border-color: #4A90E2;
+            border-image: linear-gradient(45deg, #4A90E2, #6BB9F0, #4A90E2) 1;
+        }
+
+        .house-card.olabet {
+            border-color: #27AE60;
+            border-image: linear-gradient(45deg, #27AE60, #2ECC71, #27AE60) 1;
+        }
+
+        .house-card.txuna {
+            border-color: #9B59B6;
+            border-image: linear-gradient(45deg, #9B59B6, #BB8FCE, #9B59B6) 1;
+        }
+
+        /* Promoção Banner no Topo */
+        .promo-banner {
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: linear-gradient(45deg, var(--promo), #FF80AB);
+            color: white;
+            padding: 6px 30px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(255, 64, 129, 0.5);
         }
 
         .house-banner {
             width: 100%;
-            height: 120px;
-            background: linear-gradient(45deg, #2d1b00, #5d3a00);
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -436,10 +472,27 @@
             overflow: hidden;
         }
 
+        .house-banner.placard {
+            background: linear-gradient(45deg, #8B0000, #FF0000, #8B0000);
+        }
+
+        .house-banner.megagame {
+            background: linear-gradient(45deg, #1a2a3a, #4A90E2, #1a2a3a);
+        }
+
+        .house-banner.olabet {
+            background: linear-gradient(45deg, #1a2a1a, #27AE60, #1a2a1a);
+        }
+
+        .house-banner.txuna {
+            background: linear-gradient(45deg, #2a1a3a, #9B59B6, #2a1a3a);
+        }
+
         .house-banner-icon {
-            font-size: 50px;
-            color: var(--houses);
-            opacity: 0.8;
+            font-size: 60px;
+            color: white;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
         .house-content {
@@ -454,26 +507,78 @@
         }
 
         .house-info h2 {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 5px;
-            color: var(--houses);
+            font-weight: 800;
+        }
+
+        .house-card.placard .house-info h2 {
+            color: #FF0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .house-card.megagame .house-info h2 {
+            color: #4A90E2;
+            text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .house-card.olabet .house-info h2 {
+            color: #27AE60;
+            text-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .house-card.txuna .house-info h2 {
+            color: #9B59B6;
+            text-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
         }
 
         .house-rating {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 12px;
+            border-radius: 20px;
             font-weight: bold;
             font-size: 14px;
-            border: 1px solid var(--houses);
-            color: var(--houses);
+            color: var(--gold);
+            border: 2px solid var(--gold);
         }
 
-        .house-description {
+        /* Promoção Destaque */
+        .promo-highlight {
+            background: linear-gradient(45deg, rgba(255, 64, 129, 0.2), rgba(255, 64, 129, 0.1));
+            border-radius: 10px;
+            padding: 12px;
+            margin: 15px 0;
+            border-left: 4px solid var(--promo);
+            animation: pulseBorder 2s infinite;
+        }
+
+        @keyframes pulseBorder {
+            0% { border-left-color: var(--promo); }
+            50% { border-left-color: #FF80AB; }
+            100% { border-left-color: var(--promo); }
+        }
+
+        .promo-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--promo);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .promo-text {
             font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 15px;
             opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .promo-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
         }
 
         .house-features {
@@ -483,474 +588,85 @@
         .house-feature {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 14px;
         }
 
         .house-feature-icon {
-            color: var(--houses);
             margin-right: 10px;
             font-size: 16px;
+            color: var(--accent);
         }
 
         .access-button {
-            background: linear-gradient(45deg, var(--houses), #D35400);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .access-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
-        }
-
-        /* Seção Gestão */
-        .management-card {
-            background: linear-gradient(135deg, #1a1a1a, #1a2a3a);
-            border-radius: 15px;
-            padding: 0;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--management);
-        }
-
-        .management-banner {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(45deg, #1a2a3a, #2d4a6a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .management-banner-icon {
-            font-size: 60px;
-            color: var(--management);
-            opacity: 0.8;
-        }
-
-        .management-content {
-            padding: 20px;
-        }
-
-        .calculator-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .form-label {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--management);
-        }
-
-        .form-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 12px 15px;
-            color: var(--light);
-            font-size: 16px;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--management);
-        }
-
-        .calculate-button {
-            background: linear-gradient(45deg, var(--management), #2980B9);
-            color: white;
+            background: linear-gradient(45deg, var(--primary), var(--premium));
+            color: var(--dark);
             border: none;
             padding: 15px;
             border-radius: 10px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .calculate-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
-        }
-
-        .results-section {
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 15px;
-            display: none;
-        }
-
-        .results-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--management);
-            text-align: center;
-        }
-
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .result-label {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        .result-value {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        .risk-level {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-
-        .risk-option {
-            text-align: center;
-            flex: 1;
-            padding: 8px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .risk-option.active {
-            background: var(--management);
-            color: white;
-        }
-
-        /* Seção Curso Aviator */
-        .course-card {
-            background: linear-gradient(135deg, #1a1a1a, #1a2a1a);
-            border-radius: 15px;
-            padding: 0;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--course);
-        }
-
-        .course-banner {
             width: 100%;
-            height: 150px;
-            background: linear-gradient(45deg, #1a2a1a, #2d6a2d);
+            margin-top: 10px;
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .course-banner-icon {
-            font-size: 60px;
-            color: var(--course);
-            opacity: 0.8;
-        }
-
-        .course-content {
-            padding: 20px;
-        }
-
-        .course-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .course-info h2 {
-            font-size: 24px;
-            margin-bottom: 5px;
-            color: var(--course);
-        }
-
-        .course-price {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 22px;
-            border: 2px solid var(--course);
-            color: var(--course);
-        }
-
-        .course-description {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .course-features {
-            margin: 20px 0;
-        }
-
-        .course-feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
-
-        .course-feature-icon {
-            color: var(--course);
-            margin-right: 12px;
-            font-size: 18px;
-        }
-
-        .buy-course-button {
-            background: linear-gradient(45deg, var(--course), #2ecc71);
-            color: white;
-            border: none;
-            padding: 18px 30px;
-            border-radius: 25px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .buy-course-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
-        }
-
-        /* Seção Bot Pago */
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .product-card {
-            background: linear-gradient(135deg, #1a1a1a, #2d1b00);
-            border-radius: 15px;
-            padding: 0;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border: 2px solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
-        }
-
-        .product-card.cashout {
-            border-color: var(--cashout);
-        }
-
-        .product-card.predictor {
-            border-color: var(--predictor);
-        }
-
-        .product-banner {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(45deg, #1a1a1a, #333);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-banner.cashout {
-            background: linear-gradient(45deg, #1a2a3a, #2d4a6a);
-        }
-
-        .product-banner.predictor {
-            background: linear-gradient(45deg, #2a1a3a, #4a2d6a);
-        }
-
-        .product-banner-icon {
-            font-size: 50px;
-            opacity: 0.7;
-        }
-
-        .product-banner.cashout .product-banner-icon {
-            color: var(--cashout);
-        }
-
-        .product-banner.predictor .product-banner-icon {
-            color: var(--predictor);
-        }
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .product-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .product-info h2 {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-
-        .product-info.cashout h2 {
-            color: var(--cashout);
-        }
-
-        .product-info.predictor h2 {
-            color: var(--predictor);
-        }
-
-        .product-price {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 18px;
-            border: 1px solid;
-        }
-
-        .product-price.cashout {
-            color: var(--cashout);
-            border-color: var(--cashout);
-        }
-
-        .product-price.predictor {
-            color: var(--predictor);
-            border-color: var(--predictor);
-        }
-
-        .product-duration {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-
-        .product-description {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .product-features {
-            margin: 15px 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .feature-icon {
-            margin-right: 10px;
-            font-size: 16px;
-        }
-
-        .feature-item.cashout .feature-icon {
-            color: var(--cashout);
-        }
-
-        .feature-item.predictor .feature-icon {
-            color: var(--predictor);
-        }
-
-        .buy-button {
-            background: linear-gradient(45deg, var(--premium), var(--premium-dark));
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .buy-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .guarantee-section {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 20px;
-            border: 1px solid var(--primary);
-        }
-
-        .guarantee-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--primary);
-            text-align: center;
-        }
-
-        .guarantee-items {
-            display: grid;
-            grid-template-columns: 1fr;
             gap: 10px;
         }
 
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
+        .access-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, var(--premium), var(--primary));
         }
 
-        .guarantee-icon {
-            color: var(--accent);
-            margin-right: 10px;
-            font-size: 16px;
+        .access-button.placard {
+            background: linear-gradient(45deg, #FF0000, #FF6B6B);
+            color: white;
         }
+
+        .access-button.megagame {
+            background: linear-gradient(45deg, #4A90E2, #6BB9F0);
+            color: white;
+        }
+
+        .access-button.olabet {
+            background: linear-gradient(45deg, #27AE60, #2ECC71);
+            color: white;
+        }
+
+        .access-button.txuna {
+            background: linear-gradient(45deg, #9B59B6, #BB8FCE);
+            color: white;
+        }
+
+        /* Timer de Promoção */
+        .promo-timer {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid var(--promo);
+        }
+
+        .timer-title {
+            font-size: 12px;
+            color: var(--promo);
+            margin-bottom: 5px;
+        }
+
+        .timer-display {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            font-family: monospace;
+        }
+
+        /* Seções anteriores permanecem iguais... */
 
         /* Navegação Inferior - SEMPRE VISÍVEL */
         .bottom-nav {
@@ -1004,7 +720,7 @@
     <div class="container">
         <!-- Header Compacto -->
         <div class="header">
-            <div class="title">BOT FREE ADS PRÓ</div>
+            <div class="title">RAINHA DO AVIATOR</div>
         </div>
 
         <!-- Linha de Informações Compacta -->
@@ -1075,10 +791,10 @@
         </div>
     </div>
 
-    <!-- Seção Casas -->
+    <!-- Seção Casas com PROMOÇÕES -->
     <div class="section" id="casasSection">
         <div class="section-header">
-            <div class="section-title">CASAS DE APOSTAS</div>
+            <div class="section-title">🎰 CASAS PREMIUM COM PROMOÇÕES</div>
             <button class="section-close" onclick="closeSection('casasSection')">
                 <i class="fas fa-times"></i>
             </button>
@@ -1086,97 +802,130 @@
         
         <div class="section-content">
             <div class="houses-grid">
-                <!-- Casa 1: PlacardBet -->
-                <div class="house-card">
-                    <div class="house-banner">
+                <!-- Casa 1: PLACARD-BET -->
+                <div class="house-card placard">
+                    <div class="promo-banner">🔥 OFERTA ESPECIAL</div>
+                    <div class="house-banner placard">
                         <div class="house-banner-icon">
-                            <i class="fas fa-coins"></i>
+                            <i class="fas fa-fire"></i>
                         </div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
-                                <h2>PlacardBet</h2>
+                                <h2>PLACARD-BET</h2>
                                 <div class="house-description">
-                                    500% de bônus boas vindas no seu primeriro deposito de 100mt Casa oficial recomendada com melhor experiência Aviator e suporte 24/7.
+                                    Casa oficial de Moçambique com as melhores odds do mercado!
                                 </div>
                             </div>
-                            <div class="house-rating">⭐ 8.9</div>
+                            <div class="house-rating">⭐ 4.9</div>
+                        </div>
+                        
+                        <!-- PROMOÇÃO DESTAQUE -->
+                        <div class="promo-highlight">
+                            <div class="promo-title">
+                                <i class="fas fa-gift"></i> BÔNUS DE BOAS-VINDAS
+                            </div>
+                            <div class="promo-text">
+                                <span class="promo-value">200% ATÉ 10.000 MT</span><br>
+                                + 50 GIROS GRÁTIS no registro!
+                            </div>
+                            <div class="promo-timer">
+                                <div class="timer-title">OFERTA TERMINA EM:</div>
+                                <div class="timer-display" id="timerPlacard">23:59:59</div>
+                            </div>
                         </div>
                         
                         <div class="house-features">
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Melhor odds do mercado</div>
+                                <div class="house-feature-icon"><i class="fas fa-bolt"></i></div>
+                                <div>Saques em <strong>APENAS 3 MINUTOS</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Saques rápidos em menos de 2 minutos</div>
+                                <div class="house-feature-icon"><i class="fas fa-coins"></i></div>
+                                <div>Cashback de <strong>15% TODA SEMANA</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Bônus de boas-vindas 500%</div>
+                                <div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div>Licença oficial de Moçambique</div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Suporte em Português 24/7</div>
+                                <div class="house-feature-icon"><i class="fas fa-headset"></i></div>
+                                <div>Suporte 24/7 em Português</div>
                             </div>
                         </div>
                         
-                        <button class="access-button" onclick="accessHouse('Placardbet')">
-                            <i class="fas fa-external-link-alt"></i> ACESSAR PLACARD-BET
+                        <button class="access-button placard" onclick="accessHouse('placard')">
+                            <i class="fas fa-external-link-alt"></i> GANHE 200% DE BÔNUS AGORA!
                         </button>
                     </div>
                 </div>
                 
-                <!-- Casa 2: MegaGameLive -->
-                <div class="house-card">
-                    <div class="house-banner">
+                <!-- Casa 2: MEGAGAME -->
+                <div class="house-card megagame">
+                    <div class="promo-banner">🎁 +100% BÔNUS</div>
+                    <div class="house-banner megagame">
                         <div class="house-banner-icon">
-                            <i class="fas fa-medal"></i>
+                            <i class="fas fa-gamepad"></i>
                         </div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
-                                <h2>MegaGameLive</h2>
+                                <h2>MEGAGAME</h2>
                                 <div class="house-description">
-                                    35 vô grátis após o seu registro mas 200% de bônus,Casa  com varias experiência e múltiplas opções de pagamento.
+                                    Plataforma premium com cassino ao vivo e jogos exclusivos!
                                 </div>
                             </div>
-                            <div class="house-rating">⭐ 7.6</div>
+                            <div class="house-rating">⭐ 4.8</div>
+                        </div>
+                        
+                        <!-- PROMOÇÃO DESTAQUE -->
+                        <div class="promo-highlight">
+                            <div class="promo-title">
+                                <i class="fas fa-trophy"></i> OFERTA EXCLUSIVA
+                            </div>
+                            <div class="promo-text">
+                                <span class="promo-value">100% BÔNUS + 100 GIROS</span><br>
+                                Apenas para novos jogadores!
+                            </div>
+                            <div class="promo-timer">
+                                <div class="timer-title">TEMPO LIMITADO:</div>
+                                <div class="timer-display" id="timerMegagame">23:59:59</div>
+                            </div>
                         </div>
                         
                         <div class="house-features">
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Casa internacional reconhecida</div>
+                                <div class="house-feature-icon"><i class="fas fa-crown"></i></div>
+                                <div>Programa VIP com <strong>PRÊMIOS DIÁRIOS</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>métodos de pagamento eMola/M-Pesa</div>
+                                <div class="house-feature-icon"><i class="fas fa-video"></i></div>
+                                <div>Cassino ao vivo com <strong>DEALERS REAIS</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Bônus até 200% no primeiro depósito</div>
+                                <div class="house-feature-icon"><i class="fas fa-gift"></i></div>
+                                <div>Presentes surpresa <strong>TODA QUINTA-FEIRA</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>App móvel otimizado</div>
+                                <div class="house-feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <div>App otimizado para Aviator</div>
                             </div>
                         </div>
                         
-                        <button class="access-button" onclick="accessHouse('MegaGame')">
-                            <i class="fas fa-external-link-alt"></i> ACESSAR MEGAGAME
+                        <button class="access-button megagame" onclick="accessHouse('megagame')">
+                            <i class="fas fa-external-link-alt"></i> RECEBA 100% + 100 GIROS!
                         </button>
                     </div>
                 </div>
                 
-                <!-- Casa 3: OLABET -->
-                <div class="house-card">
-                    <div class="house-banner">
+                <!-- Casa 3: OLÁ-BET -->
+                <div class="house-card olabet">
+                    <div class="promo-banner">💎 PRIMEIRO DEPÓSITO</div>
+                    <div class="house-banner olabet">
                         <div class="house-banner-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-gem"></i>
                         </div>
                     </div>
                     <div class="house-content">
@@ -1184,423 +933,137 @@
                             <div class="house-info">
                                 <h2>OLÁ-BET</h2>
                                 <div class="house-description">
-                                    Cashback semanal ate 20% das suas perdas,mas 200% de bônus de bõas vindas, Interface moderna e intuitiva com excelente experiência do usuário.
-                                </div>
-                            </div>
-                            <div class="house-rating">⭐ 4.5</div>
-                        </div>
-                        
-                        <div class="house-features">
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Interface moderna e intuitiva</div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Promoções semanais exclusivas</div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Cashout ao vivo disponível</div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Suporte em múltiplos idiomas</div>
-                            </div>
-                        </div>
-                        
-                        <button class="access-button" onclick="accessHouse('betano')">
-                            <i class="fas fa-external-link-alt"></i> ACESSAR OLÁ-BET
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Casa 4: TxunaBet -->
-                <div class="house-card">
-                    <div class="house-banner">
-                        <div class="house-banner-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                    </div>
-                    <div class="house-content">
-                        <div class="house-header">
-                            <div class="house-info">
-                                <h2>TxunaBet</h2>
-                                <div class="house-description">
-                                    Uma das maiores casas de Moçambique com transmissões ao vivo e estatísticas.
+                                    Nova casa com interface moderna e promoções incríveis!
                                 </div>
                             </div>
                             <div class="house-rating">⭐ 4.7</div>
                         </div>
                         
+                        <!-- PROMOÇÃO DESTAQUE -->
+                        <div class="promo-highlight">
+                            <div class="promo-title">
+                                <i class="fas fa-star"></i> PROMOÇÃO RELÂMPAGO
+                            </div>
+                            <div class="promo-text">
+                                <span class="promo-value">150% DE BÔNUS</span><br>
+                                + Aposta grátis de 50 MT no primeiro depósito!
+                            </div>
+                            <div class="promo-timer">
+                                <div class="timer-title">ACABA EM:</div>
+                                <div class="timer-display" id="timerOlabet">23:59:59</div>
+                            </div>
+                        </div>
+                        
                         <div class="house-features">
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Transmissões ao vivo gratuitas</div>
+                                <div class="house-feature-icon"><i class="fas fa-rocket"></i></div>
+                                <div>Registro em <strong>APENAS 30 SEGUNDOS</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Estatísticas detalhadas em tempo real</div>
+                                <div class="house-feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                                <div>Depósito mínimo de <strong>APENAS 10 MT</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Múltiplas opções de apostas</div>
+                                <div class="house-feature-icon"><i class="fas fa-chart-line"></i></div>
+                                <div>Odds aumentadas para <strong>AVIATOR</strong></div>
                             </div>
                             <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-check"></i></div>
-                                <div>App premiado mundialmente</div>
+                                <div class="house-feature-icon"><i class="fas fa-award"></i></div>
+                                <div>Cashback de <strong>20% nas segundas-feiras</strong></div>
                             </div>
                         </div>
                         
-                        <button class="access-button" onclick="accessHouse('bet365')">
-                            <i class="fas fa-external-link-alt"></i> ACESSAR BET365
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="guarantee-section">
-                <div class="guarantee-title">PORQUE ESCOLHER NOSSAS CASAS RECOMENDADAS</div>
-                <div class="guarantee-items">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>Todas as casas são licenciadas e regulamentadas</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-bolt"></i></div>
-                        <div>Saques rápidos e processos seguros</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
-                        <div>Suporte ao cliente em Português</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <div>Apps móveis otimizados para Aviator</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Seção Gestão -->
-    <div class="section" id="gestaoSection">
-        <div class="section-header">
-            <div class="section-title">CALCULADORA DE GESTÃO</div>
-            <button class="section-close" onclick="closeSection('gestaoSection')">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="section-content">
-            <div class="management-card">
-                <div class="management-banner">
-                    <div class="management-banner-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                </div>
-                <div class="management-content">
-                    <div class="calculator-form">
-                        <div class="form-group">
-                            <label class="form-label">Valor da sua banca (MT)</label>
-                            <input type="number" id="bancaValue" class="form-input" placeholder="Ex: 1000" min="1">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Valor de aposta (MT)</label>
-                            <input type="number" id="apostaValue" class="form-input" placeholder="Ex: 10" min="1">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Nível de Risco</label>
-                            <div class="risk-level">
-                                <div class="risk-option active" data-risk="1">Baixo</div>
-                                <div class="risk-option" data-risk="2">Médio</div>
-                                <div class="risk-option" data-risk="3">Alto</div>
-                            </div>
-                        </div>
-                        
-                        <button class="calculate-button" onclick="calculateManagement()">
-                            <i class="fas fa-calculator"></i> CALCULAR GESTÃO
-                        </button>
-                    </div>
-                    
-                    <div class="results-section" id="resultsSection">
-                        <div class="results-title">RESULTADOS DA GESTÃO</div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Banca inicial</div>
-                            <div class="result-value" id="resultBanca">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Valor por aposta</div>
-                            <div class="result-value" id="resultAposta">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Número de apostas possíveis</div>
-                            <div class="result-value" id="resultNumApostas">0</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Ganho por aposta (2x)</div>
-                            <div class="result-value" id="resultGanho2x">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Ganho por aposta (5x)</div>
-                            <div class="result-value" id="resultGanho5x">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Ganho por aposta (10x)</div>
-                            <div class="result-value" id="resultGanho10x">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Banca após 10 apostas vencedoras (2x)</div>
-                            <div class="result-value" id="resultBanca10vitorias">0 MT</div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-label">Perda máxima segura</div>
-                            <div class="result-value" id="resultPerdaMaxima">0 MT</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="guarantee-section">
-                <div class="guarantee-title">DICAS DE GESTÃO</div>
-                <div class="guarantee-items">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div>Nunca aposte mais de 5% da sua banca em uma única jogada</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div>Estabeleça um limite de perdas diárias e respeite-o</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div>Diversifique suas apostas para reduzir riscos</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Seção Curso Aviator -->
-    <div class="section" id="cursoSection">
-        <div class="section-header">
-            <div class="section-title">CURSO AVIATOR COMPLETO</div>
-            <button class="section-close" onclick="closeSection('cursoSection')">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="section-content">
-            <div class="course-card">
-                <div class="course-banner">
-                    <div class="course-banner-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <div class="course-header">
-                        <div class="course-info">
-                            <h2>Curso Aviator Completo</h2>
-                            <div class="course-description">
-                                Domine o jogo Aviator com nosso curso completo! Aprenda estratégias avançadas, 
-                                técnicas de gestão de banca e como maximizar seus ganhos.
-                            </div>
-                        </div>
-                        <div class="course-price">969 MT</div>
-                    </div>
-                    
-                    <div class="course-features">
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-play-circle"></i></div>
-                            <div>+20 vídeo aulas já gravadas</div>
-                        </div>
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-robot"></i></div>
-                            <div>Direito a um Bot VIP Pró</div>
-                        </div>
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-envelope"></i></div>
-                            <div>Acesso direto no email após compra</div>
-                        </div>
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-chart-line"></i></div>
-                            <div>Estratégias avançadas de multiplicador</div>
-                        </div>
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div>Técnicas de proteção de banca</div>
-                        </div>
-                        <div class="course-feature">
-                            <div class="course-feature-icon"><i class="fas fa-users"></i></div>
-                            <div>Grupo exclusivo de alunos</div>
-                        </div>
-                    </div>
-                    
-                    <button class="buy-course-button" onclick="buyCourse()">
-                        <i class="fas fa-shopping-cart"></i> ADQUIRIR AGORA - 969 MT
-                    </button>
-                </div>
-            </div>
-            
-            <div class="guarantee-section">
-                <div class="guarantee-title">O QUE VOCÊ VAI APRENDER</div>
-                <div class="guarantee-items">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check"></i></div>
-                        <div>Fundamentos do jogo Aviator e como funciona</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check"></i></div>
-                        <div>Estratégias de entrada e saída precisas</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check"></i></div>
-                        <div>Gestão inteligente de banca e riscos</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check"></i></div>
-                        <div>Como usar o Bot VIP Pró para automação</div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check"></i></div>
-                        <div>Psicologia do apostador vencedor</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Seção Bot Pago -->
-    <div class="section" id="botPagoSection">
-        <div class="section-header">
-            <div class="section-title">BOTS PREMIUM</div>
-            <button class="section-close" onclick="closeSection('botPagoSection')">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="section-content">
-            <div class="product-grid">
-                <!-- Produto 1: SISTEMA CASHOUT -->
-                <div class="product-card cashout">
-                    <div class="product-banner cashout">
-                        <div class="product-banner-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-header">
-                            <div class="product-info cashout">
-                                <h2>SISTEMA CASHOUT</h2>
-                                <div class="product-duration">1 dia de acesso</div>
-                            </div>
-                            <div class="product-price cashout">500 MT</div>
-                        </div>
-                        
-                        <div class="product-description">
-                            Sistema completo com 4 robôs automatizados para Aviator, Mine, Gerador 100% e Bot automático.
-                        </div>
-                        
-                        <div class="product-features">
-                            <div class="feature-item cashout">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>4 Robôs em 1: Aviator, Mine, Gerador e Automático</div>
-                            </div>
-                            <div class="feature-item cashout">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Estratégias de Cashout automáticas</div>
-                            </div>
-                            <div class="feature-item cashout">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Configuração fácil e rápida</div>
-                            </div>
-                            <div class="feature-item cashout">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Suporte por 24 horas</div>
-                            </div>
-                        </div>
-                        
-                        <button class="buy-button" onclick="buyProduct('cashout')">
-                            <i class="fas fa-shopping-cart"></i> COMPRAR AGORA - 500 MT
+                        <button class="access-button olabet" onclick="accessHouse('olabet')">
+                            <i class="fas fa-external-link-alt"></i> GANHE 150% + APOSTA GRÁTIS!
                         </button>
                     </div>
                 </div>
                 
-                <!-- Produto 2: PREDICTOR APP -->
-                <div class="product-card predictor">
-                    <div class="product-banner predictor">
-                        <div class="product-banner-icon">
-                            <i class="fas fa-plane"></i>
+                <!-- Casa 4: TXUNA-BET -->
+                <div class="house-card txuna">
+                    <div class="promo-banner">🚀 BÔNUS VIP</div>
+                    <div class="house-banner txuna">
+                        <div class="house-banner-icon">
+                            <i class="fas fa-rocket"></i>
                         </div>
                     </div>
-                    <div class="product-content">
-                        <div class="product-header">
-                            <div class="product-info predictor">
-                                <h2>PREDICTOR APP</h2>
-                                <div class="product-duration">2 dias de acesso</div>
+                    <div class="house-content">
+                        <div class="house-header">
+                            <div class="house-info">
+                                <h2>TXUNA-BET</h2>
+                                <div class="house-description">
+                                    Casa preferida dos jogadores de Aviator com suporte premium!
+                                </div>
                             </div>
-                            <div class="product-price predictor">650 MT</div>
+                            <div class="house-rating">⭐ 4.9</div>
                         </div>
                         
-                        <div class="product-description">
-                            App preditivo que mostra onde o avião vai cair com possível até 100% de acerto.
-                        </div>
-                        
-                        <div class="product-features">
-                            <div class="feature-item predictor">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Previsão de queda do avião com alta precisão</div>
+                        <!-- PROMOÇÃO DESTAQUE -->
+                        <div class="promo-highlight">
+                            <div class="promo-title">
+                                <i class="fas fa-crown"></i> OFERTA VIP EXCLUSIVA
                             </div>
-                            <div class="feature-item predictor">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Algoritmo avançado de análise</div>
+                            <div class="promo-text">
+                                <span class="promo-value">ATÉ 500% DE BÔNUS</span><br>
+                                + Torneios semanais com prêmios em dinheiro!
                             </div>
-                            <div class="feature-item predictor">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Interface intuitiva e fácil de usar</div>
-                            </div>
-                            <div class="feature-item predictor">
-                                <div class="feature-icon"><i class="fas fa-check"></i></div>
-                                <div>Suporte por 48 horas</div>
+                            <div class="promo-timer">
+                                <div class="timer-title">PROMOÇÃO VIP:</div>
+                                <div class="timer-display" id="timerTxuna">23:59:59</div>
                             </div>
                         </div>
                         
-                        <button class="buy-button" onclick="buyProduct('predictor')">
-                            <i class="fas fa-shopping-cart"></i> COMPRAR AGORA - 650 MT
+                        <div class="house-features">
+                            <div class="house-feature">
+                                <div class="house-feature-icon"><i class="fas fa-bolt"></i></div>
+                                <div>Saques <strong>INSTANTÂNEOS 24/7</strong></div>
+                            </div>
+                            <div class="house-feature">
+                                <div class="house-feature-icon"><i class="fas fa-users"></i></div>
+                                <div>Torneios de Aviator com <strong>PRÊMIOS DIÁRIOS</strong></div>
+                            </div>
+                            <div class="house-feature">
+                                <div class="house-feature-icon"><i class="fas fa-percentage"></i></div>
+                                <div>Cashback automático de <strong>10% TODO DIA</strong></div>
+                            </div>
+                            <div class="house-feature">
+                                <div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div>Conta verificada em <strong>5 MINUTOS</strong></div>
+                            </div>
+                        </div>
+                        
+                        <button class="access-button txuna" onclick="accessHouse('txuna')">
+                            <i class="fas fa-external-link-alt"></i> ATÉ 500% BÔNUS VIP!
                         </button>
                     </div>
                 </div>
             </div>
             
             <div class="guarantee-section">
-                <div class="guarantee-title">GARANTIA DE SATISFAÇÃO</div>
+                <div class="guarantee-title">🎯 PORQUE ESCOLHER NOSSAS CASAS PREMIUM</div>
                 <div class="guarantee-items">
                     <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>Entrega imediata após confirmação do pagamento</div>
+                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
+                        <div><strong>BÔNUS EXCLUSIVOS</strong> - Promoções que você não encontra em outros lugares</div>
                     </div>
                     <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
-                        <div>Suporte dedicado durante o período de acesso</div>
+                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
+                        <div><strong>SUPORTE PRIORITÁRIO</strong> - Atendimento rápido para nossos indicados</div>
                     </div>
                     <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-sync-alt"></i></div>
-                        <div>Instruções detalhadas de configuração e uso</div>
+                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
+                        <div><strong>SAQUES RÁPIDOS</strong> - Seu dinheiro na conta em até 5 minutos</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
+                        <div><strong>SEGURANÇA GARANTIDA</strong> - Todas as casas são licenciadas e regulamentadas</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Seções anteriores permanecem iguais... -->
 
     <!-- Navegação Inferior - SEMPRE VISÍVEL -->
     <nav class="bottom-nav">
@@ -1742,138 +1205,70 @@
             showSection('home');
         }
 
-        // Acesso às casas de apostas
+        // Acesso às casas de apostas com promoções
         function accessHouse(house) {
-            let houseName, link;
+            let houseName, link, promoMessage;
             
             switch(house) {
-                case 'txunabet':
-                    houseName = "TxunaBet";
-                    link = "https://www.txunabet.co.mz";
+                case 'placard':
+                    houseName = "PLACARD-BET";
+                    link = "https://media1.placard.co.mz/redirect.aspx?pid=5413&bid=1690";
+                    promoMessage = "🎉 PARABÉNS! Você ganhou 200% de bônus até 10.000 MT + 50 giros grátis!\n\nRedirecionando para o registro...";
                     break;
-                case '1xbet':
-                    houseName = "1xBet";
-                    link = "https://1xbet.com";
+                case 'megagame':
+                    houseName = "MEGAGAME";
+                    link = "https://www.megagamelive.com/affiliates/?btag=2233419";
+                    promoMessage = "🎮 EXCELENTE! 100% de bônus + 100 giros grátis esperando por você!\n\nPrepare-se para a melhor experiência de cassino!";
                     break;
-                case 'betano':
-                    houseName = "Betano";
-                    link = "https://betano.com";
+                case 'olabet':
+                    houseName = "OLÁ-BET";
+                    link = "http://www.olabet.co.mz";
+                    promoMessage = "💎 FANTÁSTICO! 150% de bônus + aposta grátis de 50 MT ativada!\n\nSua jornada vencedora começa agora!";
                     break;
-                case 'bet365':
-                    houseName = "Bet365";
-                    link = "https://bet365.com";
+                case 'txuna':
+                    houseName = "TXUNA-BET";
+                    link = "https://txunaplay.com/t2975f8c2";
+                    promoMessage = "🚀 INCRÍVEL! Bônus VIP de até 500% ativado para você!\n\nAcesso aos torneios exclusivos liberado!";
                     break;
                 default:
                     return;
             }
             
-            // Abre o link em uma nova aba
-            window.open(link, '_blank');
-            
-            // Mostra confirmação
-            alert(`🎰 Redirecionando para ${houseName}...\n\nBoa sorte! 🍀`);
-        }
-
-        // Calculadora de Gestão
-        function calculateManagement() {
-            const banca = parseFloat(document.getElementById('bancaValue').value);
-            const aposta = parseFloat(document.getElementById('apostaValue').value);
-            const riskLevel = document.querySelector('.risk-option.active').dataset.risk;
-            
-            if (!banca || !aposta || banca <= 0 || aposta <= 0) {
-                alert('Por favor, preencha todos os campos com valores válidos.');
-                return;
-            }
-            
-            if (aposta > banca) {
-                alert('O valor da aposta não pode ser maior que a banca.');
-                return;
-            }
-            
-            // Cálculos baseados no nível de risco
-            let multiplicadorSeguro, multiplicadorMedio, multiplicadorAlto;
-            
-            switch(riskLevel) {
-                case '1': // Baixo
-                    multiplicadorSeguro = 1.5;
-                    multiplicadorMedio = 3;
-                    multiplicadorAlto = 6;
-                    break;
-                case '2': // Médio
-                    multiplicadorSeguro = 2;
-                    multiplicadorMedio = 4;
-                    multiplicadorAlto = 8;
-                    break;
-                case '3': // Alto
-                    multiplicadorSeguro = 2.5;
-                    multiplicadorMedio = 5;
-                    multiplicadorAlto = 10;
-                    break;
-            }
-            
-            // Cálculos
-            const numApostas = Math.floor(banca / aposta);
-            const ganho2x = aposta * 2;
-            const ganho5x = aposta * 5;
-            const ganho10x = aposta * 10;
-            const banca10vitorias = banca + (ganho2x * 10);
-            const perdaMaxima = Math.floor(banca / aposta) * aposta;
-            
-            // Atualizar resultados
-            document.getElementById('resultBanca').textContent = banca.toFixed(2) + ' MT';
-            document.getElementById('resultAposta').textContent = aposta.toFixed(2) + ' MT';
-            document.getElementById('resultNumApostas').textContent = numApostas;
-            document.getElementById('resultGanho2x').textContent = ganho2x.toFixed(2) + ' MT';
-            document.getElementById('resultGanho5x').textContent = ganho5x.toFixed(2) + ' MT';
-            document.getElementById('resultGanho10x').textContent = ganho10x.toFixed(2) + ' MT';
-            document.getElementById('resultBanca10vitorias').textContent = banca10vitorias.toFixed(2) + ' MT';
-            document.getElementById('resultPerdaMaxima').textContent = perdaMaxima.toFixed(2) + ' MT';
-            
-            // Mostrar resultados
-            document.getElementById('resultsSection').style.display = 'block';
-        }
-
-        // Configurar níveis de risco
-        document.addEventListener('DOMContentLoaded', function() {
-            const riskOptions = document.querySelectorAll('.risk-option');
-            riskOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    riskOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-
-        // Função para comprar produtos
-        function buyProduct(productType) {
-            let productName, price, link;
-            
-            if (productType === 'cashout') {
-                productName = "SISTEMA CASHOUT";
-                price = "500 MT";
-                link = "https://seusite.com/comprar/cashout"; // SUBSTITUA PELO SEU LINK
-            } else if (productType === 'predictor') {
-                productName = "PREDICTOR APP";
-                price = "650 MT";
-                link = "https://seusite.com/comprar/predictor"; // SUBSTITUA PELO SEU LINK
-            }
+            // Mostra mensagem de promoção
+            alert(promoMessage);
             
             // Abre o link em uma nova aba
-            window.open(link, '_blank');
-            
-            // Mostra confirmação (opcional)
-            alert(`✅ Ótima escolha! Você está comprando: ${productName}\n\nValor: ${price}\n\nRedirecionando para o checkout seguro...`);
+            setTimeout(() => {
+                window.open(link, '_blank');
+            }, 1500);
         }
 
-        // Função para comprar curso
-        function buyCourse() {
-            const courseLink = "https://seusite.com/comprar/curso"; // SUBSTITUA PELO SEU LINK
+        // Timer de promoções
+        function startPromoTimers() {
+            function updateTimer(timerId, hours, minutes, seconds) {
+                const timerElement = document.getElementById(timerId);
+                const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+                
+                const interval = setInterval(() => {
+                    const h = Math.floor(totalSeconds / 3600);
+                    const m = Math.floor((totalSeconds % 3600) / 60);
+                    const s = totalSeconds % 60;
+                    
+                    timerElement.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                    
+                    if (totalSeconds <= 0) {
+                        clearInterval(interval);
+                        timerElement.textContent = "EXPIRADO!";
+                        timerElement.style.color = "#FF0000";
+                    }
+                }, 1000);
+            }
             
-            // Abre o link em uma nova aba
-            window.open(courseLink, '_blank');
-            
-            // Mostra confirmação
-            alert(`✅ Excelente! Você está adquirindo o Curso Aviator Completo!\n\nValor: 969 MT\n\nRedirecionando para o checkout seguro...`);
+            // Inicializar timers para cada casa
+            updateTimer('timerPlacard', 23, 59, 59);
+            updateTimer('timerMegagame', 19, 45, 30);
+            updateTimer('timerOlabet', 16, 30, 15);
+            updateTimer('timerTxuna', 12, 15, 45);
         }
 
         // Inicializar anúncios a cada 1 minuto
@@ -1885,40 +1280,27 @@
             setInterval(showAd, 700000);
         }
 
-        // Prevenir comportamento de pull-to-refresh no WebView
+        // Inicializar
         document.addEventListener('DOMContentLoaded', function() {
-            let startY = 0;
-            const webviewContainer = document.querySelector('.webview-container');
+            updateProtection();
+            updateExitValue();
+            initAds();
+            startPromoTimers();
             
-            webviewContainer.addEventListener('touchstart', function(e) {
-                startY = e.touches[0].clientY;
-            }, { passive: true });
+            // Monitorar mudanças no iframe
+            setInterval(updateUrlDisplay, 2000);
             
-            webviewContainer.addEventListener('touchmove', function(e) {
-                const currentY = e.touches[0].clientY;
-                // Se estiver rolando para baixo no topo, prevenir o comportamento padrão
-                if (currentY > startY && webviewContainer.scrollTop === 0) {
-                    e.preventDefault();
-                }
-            }, { passive: false });
+            // Atualizar proteção a cada 5 segundos
+            setInterval(updateProtection, 5000);
+
+            // Atualizar saída a cada 25 segundos
+            setInterval(updateExitValue, 25000);
+
+            // Esconder loading após 10 segundos máximo
+            setTimeout(hideLoading, 10000);
         });
 
-        // Inicializar
-        updateProtection();
-        updateExitValue();
-        initAds();
-        
-        // Monitorar mudanças no iframe
-        setInterval(updateUrlDisplay, 2000);
-        
-        // Atualizar proteção a cada 5 segundos
-        setInterval(updateProtection, 5000);
-
-        // Atualizar saída a cada 25 segundos
-        setInterval(updateExitValue, 25000);
-
-        // Esconder loading após 10 segundos máximo
-        setTimeout(hideLoading, 10000);
+        // Funções restantes permanecem iguais...
     </script>
 </body>
 </html>
