@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Rainha do Aviator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -24,11 +24,7 @@
             --promo: #FF4081;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -73,43 +69,13 @@
             align-items: center;
         }
 
-        .info-item {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-
-        .info-icon {
-            font-size: 14px;
-            margin-right: 6px;
-            color: var(--primary);
-        }
-
-        .info-title {
-            font-size: 11px;
-            opacity: 0.8;
-            margin-right: 4px;
-        }
-
-        .info-value {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .protection-value {
-            color: var(--light);
-        }
-
-        .exit-value {
-            color: var(--accent);
-        }
-
-        .divider {
-            width: 1px;
-            height: 18px;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 0 12px;
-        }
+        .info-item { display: flex; align-items: center; flex: 1; }
+        .info-icon { font-size: 14px; margin-right: 6px; color: var(--primary); }
+        .info-title { font-size: 11px; opacity: 0.8; margin-right: 4px; }
+        .info-value { font-size: 13px; font-weight: bold; }
+        .protection-value { color: var(--light); }
+        .exit-value { color: var(--accent); }
+        .divider { width: 1px; height: 18px; background: rgba(255,255,255,0.3); margin: 0 12px; }
 
         /* Anúncio Premium */
         .ad-premium {
@@ -130,590 +96,843 @@
         }
 
         @keyframes premiumSlide {
-            from { 
-                transform: translateY(-100%) scale(0.9);
-                opacity: 0;
-            }
-            to { 
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
+            from { transform: translateY(-100%) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
         }
 
         .ad-premium::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
+            top: 0; left: 0; right: 0; height: 3px;
             background: linear-gradient(90deg, var(--gold), var(--premium), var(--gold));
         }
 
-        .ad-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
+        .ad-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
         .ad-badge {
             background: linear-gradient(45deg, var(--gold), #FFA500);
-            color: #000;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 4px 8px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
+            color: #000; font-size: 10px; font-weight: bold; padding: 4px 8px; border-radius: 20px;
+            display:flex; align-items:center;
         }
-
-        .ad-badge i {
-            margin-right: 4px;
-        }
-
+        .ad-badge i { margin-right: 4px; }
         .ad-close {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: var(--light);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1); border: none; color: var(--light); width:24px; height:24px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; cursor:pointer; transition: all 0.3s ease;
         }
-
-        .ad-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .ad-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .ad-icon {
-            font-size: 28px;
-            margin-right: 12px;
-            background: linear-gradient(45deg, var(--gold), var(--premium));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulseGlow 2s infinite;
-        }
-
-        @keyframes pulseGlow {
-            0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
-            50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
-            100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
-        }
-
-        .ad-text {
-            flex: 1;
-        }
-
-        .ad-title {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 3px;
-            background: linear-gradient(45deg, var(--gold), var(--premium));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .ad-description {
-            font-size: 11px;
-            opacity: 0.9;
-            line-height: 1.3;
-        }
-
+        .ad-close:hover { background: rgba(255,255,255,0.2); }
+        .ad-content { display:flex; align-items:center; }
+        .ad-icon { font-size: 28px; margin-right: 12px; background: linear-gradient(45deg, var(--gold), var(--premium)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: pulseGlow 2s infinite; }
+        @keyframes pulseGlow { 0% { text-shadow: 0 0 5px rgba(255,215,0,0.5); } 50% { text-shadow: 0 0 15px rgba(255,215,0,0.8);} 100% { text-shadow: 0 0 5px rgba(255,215,0,0.5);} }
+        .ad-text { flex:1; }
+        .ad-title { font-size:14px; font-weight:bold; margin-bottom:3px; background: linear-gradient(45deg, var(--gold), var(--premium)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .ad-description { font-size:11px; opacity:0.9; line-height:1.3; }
         .ad-button {
             background: linear-gradient(45deg, var(--premium), var(--premium-dark));
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
-            margin-left: 10px;
+            color: white; border: none; padding: 8px 15px; border-radius:20px; font-size:11px; font-weight:bold; cursor:pointer;
+            transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(255,107,53,0.3); margin-left:10px;
         }
-
-        .ad-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
-        }
+        .ad-button:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255,107,53,0.4); }
 
         /* WebView Container */
         .webview-container {
-            flex: 1;
-            background: var(--dark);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid var(--primary);
-            position: relative;
-            margin-bottom: 55px;
-            touch-action: pan-y;
-            -webkit-overflow-scrolling: touch;
+            flex: 1; background: var(--dark); border-radius: 12px; overflow: hidden; border: 2px solid var(--primary);
+            position: relative; margin-bottom: 55px; touch-action: pan-y; -webkit-overflow-scrolling: touch;
         }
 
         .webview-controls {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 6px 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
+            position: absolute; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.9); padding: 6px 8px; display:flex; justify-content:space-between; align-items:center; z-index:100;
         }
 
-        .url-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
+        .url-container { flex:1; display:flex; justify-content:center; align-items:center; }
         .url-bar {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 70%;
-            text-align: center;
+            background: rgba(255,255,255,0.1); color: var(--light); padding: 5px 10px; border-radius:15px; font-size:10px;
+            overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:1px solid rgba(255,255,255,0.1); max-width:70%; text-align:center;
         }
-
-        .webview-btn {
-            background: var(--primary);
-            color: var(--dark);
-            border: none;
-            padding: 5px 10px;
-            border-radius: 12px;
-            font-size: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            min-width: 50px;
-        }
+        .webview-btn { background: var(--primary); color: var(--dark); border:none; padding:5px 10px; border-radius:12px; font-size:10px; cursor:pointer; font-weight:bold; min-width:50px; }
 
         .webview-frame {
-            width: 100%;
-            height: 100%;
-            border: none;
-            margin-top: 35px;
-            overscroll-behavior: none;
-            -webkit-overflow-scrolling: auto;
+            width:100%; height:100%; border:none; margin-top:35px; overscroll-behavior:none; -webkit-overflow-scrolling:auto;
         }
 
         .loading-overlay {
-            position: absolute;
-            top: 35px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.95);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 50;
+            position:absolute; top:35px; left:0; right:0; bottom:0; background: rgba(10,10,10,0.95); display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:50;
         }
 
         .spinner {
-            width: 35px;
-            height: 35px;
-            border: 3px solid var(--primary);
-            border-top: 3px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 12px;
+            width:35px; height:35px; border:3px solid var(--primary); border-top:3px solid transparent; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:12px;
         }
+        @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Seções (Bot Pago, Curso, Gestão, Casas) */
+        /* Sections */
         .section {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 60px; /* Deixa espaço para a navegação inferior */
-            background: rgba(10, 10, 10, 0.98);
-            z-index: 2000;
-            display: none;
-            flex-direction: column;
-            padding: 15px;
-            overflow-y: auto;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 60px; background: rgba(10,10,10,0.98); z-index:2000; display:none; flex-direction:column; padding:15px; overflow-y:auto;
         }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--primary);
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--primary), var(--premium));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
+        .section-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:15px; border-bottom:2px solid var(--primary); }
+        .section-title { font-size:24px; font-weight:bold; background: linear-gradient(45deg, var(--primary), var(--premium)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
         .section-close {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: var(--light);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 18px;
+            background: rgba(255,255,255,0.1); border:none; color: var(--light); width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px;
         }
 
-        .section-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .section-content { flex:1; display:flex; flex-direction:column; gap:20px; }
 
-        /* Seção Casas - PROMOÇÕES CHAMATIVAS */
-        .houses-grid {
+        /* Casas cards ORIGINAL mantido intacto */
+        .houses-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+        @media (min-width:768px) { .houses-grid { grid-template-columns:1fr 1fr; } }
+
+        .house-card { background: linear-gradient(135deg, #1a1a1a, #2d1b00); border-radius:15px; padding:0; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.7); border:3px solid; transition: transform 0.3s ease, box-shadow 0.3s ease; position:relative; }
+        .house-card:hover { transform: translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.9); }
+        .house-card.placard { border-color:#FF0000; border-image: linear-gradient(45deg, #FF0000, #FF6B6B, #FF0000) 1; }
+        .house-card.megagame { border-color:#4A90E2; border-image: linear-gradient(45deg, #4A90E2, #6BB9F0, #4A90E2) 1; }
+        .house-card.olabet { border-color:#27AE60; border-image: linear-gradient(45deg, #27AE60, #2ECC71, #27AE60) 1; }
+        .house-card.txuna { border-color:#9B59B6; border-image: linear-gradient(45deg, #9B59B6, #BB8FCE, #9B59B6) 1; }
+
+        .promo-banner { position:absolute; top:10px; right:-30px; background: linear-gradient(45deg, var(--promo), #FF80AB); color:white; padding:6px 30px; font-size:12px; font-weight:bold; transform: rotate(45deg); z-index:10; box-shadow:0 3px 10px rgba(255,64,129,0.5); }
+
+        .house-banner { width:100%; height:140px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+        .house-banner.placard { background: linear-gradient(45deg, #8B0000, #FF0000, #8B0000); }
+        .house-banner.megagame { background: linear-gradient(45deg, #1a2a3a, #4A90E2, #1a2a3a); }
+        .house-banner.olabet { background: linear-gradient(45deg, #1a2a1a, #27AE60, #1a2a1a); }
+        .house-banner.txuna { background: linear-gradient(45deg, #2a1a3a, #9B59B6, #2a2a3a); }
+
+        .house-banner-icon { font-size:60px; color:white; opacity:0.9; filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); }
+        .house-content { padding:20px; }
+        .house-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:15px; }
+        .house-info h2 { font-size:22px; margin-bottom:5px; font-weight:800; }
+        .house-rating { background: rgba(0,0,0,0.7); padding:5px 12px; border-radius:20px; font-weight:bold; font-size:14px; color:var(--gold); border:2px solid var(--gold); }
+
+        .promo-highlight { background: linear-gradient(45deg, rgba(255,64,129,0.2), rgba(255,64,129,0.1)); border-radius:10px; padding:12px; margin:15px 0; border-left:4px solid var(--promo); animation: pulseBorder 2s infinite; }
+        @keyframes pulseBorder { 0% { border-left-color: var(--promo);} 50% { border-left-color: #FF80AB; } 100% { border-left-color: var(--promo); } }
+
+        .promo-title { font-size:16px; font-weight:bold; color:var(--promo); margin-bottom:5px; display:flex; align-items:center; gap:8px; }
+        .promo-text { font-size:14px; opacity:0.9; line-height:1.4; }
+        .promo-value { font-size:18px; font-weight:bold; color:var(--gold); text-shadow: 0 0 5px rgba(255,215,0,0.5); }
+        .house-features { margin:15px 0; }
+        .house-feature { display:flex; align-items:center; margin-bottom:10px; font-size:14px; }
+        .house-feature-icon { margin-right:10px; font-size:16px; color:var(--accent); }
+
+        .access-button { background: linear-gradient(45deg, var(--primary), var(--premium)); color: var(--dark); border:none; padding:15px; border-radius:10px; font-size:16px; font-weight:bold; cursor:pointer; width:100%; margin-top:10px; box-shadow:0 6px 15px rgba(255,215,0,0.3); transition: all 0.3s ease; display:flex; align-items:center; justify-content:center; gap:10px; }
+        .access-button:hover { transform: translateY(-3px); box-shadow:0 8px 20px rgba(255,215,0,0.5); background: linear-gradient(45deg, var(--premium), var(--primary)); }
+        .access-button.placard { background: linear-gradient(45deg, #FF0000, #FF6B6B); color:white; }
+        .access-button.megagame { background: linear-gradient(45deg, #4A90E2, #6BB9F0); color:white; }
+        .access-button.olabet { background: linear-gradient(45deg, #27AE60, #2ECC71); color:white; }
+        .access-button.txuna { background: linear-gradient(45deg, #9B59B6, #BB8FCE); color:white; }
+
+        .promo-timer { background: rgba(0,0,0,0.8); border-radius:8px; padding:8px; text-align:center; margin:10px 0; border:1px solid var(--promo); }
+        .timer-title { font-size:12px; color:var(--promo); margin-bottom:5px; }
+        .timer-display { font-size:14px; font-weight:bold; color:white; font-family:monospace; }
+
+        /* Seção Gestão - Melhorada */
+        .management-section {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 25px;
         }
 
         @media (min-width: 768px) {
-            .houses-grid {
+            .management-section {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        .house-card {
+        .calc-card {
             background: linear-gradient(135deg, #1a1a1a, #2d1b00);
-            border-radius: 15px;
-            padding: 0;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            border: 3px solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .house-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
-        }
-
-        .house-card.placard {
-            border-color: #FF0000;
-            border-image: linear-gradient(45deg, #FF0000, #FF6B6B, #FF0000) 1;
-        }
-
-        .house-card.megagame {
-            border-color: #4A90E2;
-            border-image: linear-gradient(45deg, #4A90E2, #6BB9F0, #4A90E2) 1;
-        }
-
-        .house-card.olabet {
-            border-color: #27AE60;
-            border-image: linear-gradient(45deg, #27AE60, #2ECC71, #27AE60) 1;
-        }
-
-        .house-card.txuna {
-            border-color: #9B59B6;
-            border-image: linear-gradient(45deg, #9B59B6, #BB8FCE, #9B59B6) 1;
-        }
-
-        /* Promoção Banner no Topo */
-        .promo-banner {
-            position: absolute;
-            top: 10px;
-            right: -30px;
-            background: linear-gradient(45deg, var(--promo), #FF80AB);
-            color: white;
-            padding: 6px 30px;
-            font-size: 12px;
-            font-weight: bold;
-            transform: rotate(45deg);
-            z-index: 10;
-            box-shadow: 0 3px 10px rgba(255, 64, 129, 0.5);
-        }
-
-        .house-banner {
-            width: 100%;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .house-banner.placard {
-            background: linear-gradient(45deg, #8B0000, #FF0000, #8B0000);
-        }
-
-        .house-banner.megagame {
-            background: linear-gradient(45deg, #1a2a3a, #4A90E2, #1a2a3a);
-        }
-
-        .house-banner.olabet {
-            background: linear-gradient(45deg, #1a2a1a, #27AE60, #1a2a1a);
-        }
-
-        .house-banner.txuna {
-            background: linear-gradient(45deg, #2a1a3a, #9B59B6, #2a1a3a);
-        }
-
-        .house-banner-icon {
-            font-size: 60px;
-            color: white;
-            opacity: 0.9;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-        }
-
-        .house-content {
-            padding: 20px;
-        }
-
-        .house-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .house-info h2 {
-            font-size: 22px;
-            margin-bottom: 5px;
-            font-weight: 800;
-        }
-
-        .house-card.placard .house-info h2 {
-            color: #FF0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-        }
-
-        .house-card.megagame .house-info h2 {
-            color: #4A90E2;
-            text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
-        }
-
-        .house-card.olabet .house-info h2 {
-            color: #27AE60;
-            text-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
-        }
-
-        .house-card.txuna .house-info h2 {
-            color: #9B59B6;
-            text-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
-        }
-
-        .house-rating {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 5px 12px;
             border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            color: var(--gold);
-            border: 2px solid var(--gold);
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            border: 3px solid var(--management);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Promoção Destaque */
-        .promo-highlight {
-            background: linear-gradient(45deg, rgba(255, 64, 129, 0.2), rgba(255, 64, 129, 0.1));
-            border-radius: 10px;
-            padding: 12px;
-            margin: 15px 0;
-            border-left: 4px solid var(--promo);
-            animation: pulseBorder 2s infinite;
+        .calc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
         }
 
-        @keyframes pulseBorder {
-            0% { border-left-color: var(--promo); }
-            50% { border-left-color: #FF80AB; }
-            100% { border-left-color: var(--promo); }
+        .calc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--management), #6BB9F0, var(--management));
         }
 
-        .promo-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--promo);
-            margin-bottom: 5px;
+        .calc-header {
             display: flex;
             align-items: center;
-            gap: 8px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .promo-text {
+        .calc-icon {
+            font-size: 28px;
+            margin-right: 15px;
+            color: var(--management);
+            background: linear-gradient(45deg, var(--management), #6BB9F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .calc-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(45deg, var(--management), #6BB9F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .calc-subtitle {
             font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.4;
+            opacity: 0.8;
+            margin-top: 5px;
         }
 
-        .promo-value {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--gold);
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        .calc-input-group {
+            margin-bottom: 20px;
         }
 
-        .house-features {
-            margin: 15px 0;
-        }
-
-        .house-feature {
+        .calc-label {
             display: flex;
             align-items: center;
+            font-size: 15px;
+            font-weight: 600;
             margin-bottom: 10px;
-            font-size: 14px;
+            color: var(--light);
         }
 
-        .house-feature-icon {
+        .calc-label-icon {
             margin-right: 10px;
+            color: var(--management);
             font-size: 16px;
-            color: var(--accent);
         }
 
-        .access-button {
-            background: linear-gradient(45deg, var(--primary), var(--premium));
-            color: var(--dark);
+        .calc-input {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--management);
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .calc-button {
+            width: 100%;
+            padding: 18px;
             border: none;
-            padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
+            background: linear-gradient(45deg, var(--management), #6BB9F0);
+            color: white;
             margin-top: 10px;
-            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
             transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
 
-        .access-button:hover {
+        .calc-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
-            background: linear-gradient(45deg, var(--premium), var(--primary));
+            box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #6BB9F0, var(--management));
         }
 
-        .access-button.placard {
-            background: linear-gradient(45deg, #FF0000, #FF6B6B);
-            color: white;
+        .calc-result {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            display: none;
+            animation: fadeIn 0.5s ease;
         }
 
-        .access-button.megagame {
-            background: linear-gradient(45deg, #4A90E2, #6BB9F0);
-            color: white;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .access-button.olabet {
-            background: linear-gradient(45deg, #27AE60, #2ECC71);
-            color: white;
+        .result-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .access-button.txuna {
-            background: linear-gradient(45deg, #9B59B6, #BB8FCE);
-            color: white;
+        .result-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            color: var(--accent);
         }
 
-        /* Timer de Promoção */
-        .promo-timer {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
-            padding: 8px;
-            text-align: center;
-            margin: 10px 0;
-            border: 1px solid var(--promo);
-        }
-
-        .timer-title {
-            font-size: 12px;
-            color: var(--promo);
-            margin-bottom: 5px;
-        }
-
-        .timer-display {
-            font-size: 14px;
+        .result-title {
+            font-size: 18px;
             font-weight: bold;
-            color: white;
-            font-family: monospace;
+            background: linear-gradient(45deg, var(--accent), #00FFAA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Seções anteriores permanecem iguais... */
-
-        /* Navegação Inferior - SEMPRE VISÍVEL */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            padding: 10px 0;
-            border-top: 2px solid var(--primary);
-            z-index: 3000; /* Z-index alto para ficar acima de tudo */
-        }
-
-        .nav-items {
+        .result-line {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            max-width: 100%;
-            margin: 0 auto;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
+        .result-line:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .result-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .percent-value {
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .risk-indicator {
+            display: inline-flex;
             align-items: center;
-            color: var(--light);
-            text-decoration: none;
-            font-size: 10px;
-            padding: 4px;
-            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .risk-low {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .risk-moderate {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .risk-high {
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--premium);
+            border: 1px solid var(--premium);
+        }
+
+        .risk-very-high {
+            background: rgba(255, 0, 0, 0.2);
+            color: #FF0000;
+            border: 1px solid #FF0000;
+        }
+
+        /* Cards de Benefícios da Gestão */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .benefit-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
             transition: all 0.3s ease;
         }
 
-        .nav-icon {
-            font-size: 16px;
-            margin-bottom: 3px;
-        }
-
-        .nav-item.active {
-            color: var(--primary);
+        .benefit-card:hover {
+            border-color: var(--management);
             transform: translateY(-5px);
         }
 
-        .nav-label {
-            font-size: 10px;
+        .benefit-icon {
+            font-size: 24px;
+            color: var(--management);
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .benefit-description {
+            font-size: 13px;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Seção Curso - Melhorada */
+        .course-section {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, #1a1a1a, #2d1b00);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border: 3px solid var(--course);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--course), #2ECC71, var(--course));
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--course), #2ECC71);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .course-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .course-icon {
+            font-size: 40px;
+            margin-right: 20px;
+            background: linear-gradient(45deg, var(--course), #2ECC71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(39, 174, 96, 0.5));
+        }
+
+        .course-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(45deg, var(--course), #2ECC71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .course-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .course-highlight {
+            background: linear-gradient(45deg, rgba(39, 174, 96, 0.2), rgba(39, 174, 96, 0.1));
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 5px solid var(--course);
+            animation: pulseBorder 3s infinite;
+        }
+
+        .course-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+        }
+
+        .course-price::before {
+            content: 'INVESTIMENTO';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: var(--gold);
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-size: 12px;
             font-weight: bold;
         }
+
+        .course-button {
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(45deg, var(--course), #2ECC71);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .course-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.6);
+            background: linear-gradient(45deg, #2ECC71, var(--course));
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(39, 174, 96, 0.1);
+        }
+
+        .feature-item:hover {
+            border-color: var(--course);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--course);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .feature-highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Seção Bot Pago - COM SUPORTE PARA IMAGENS */
+        .bot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .bot-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .bot-card {
+            background: linear-gradient(135deg, #1a1a1a, #2d1b00);
+            border-radius: 25px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border: 3px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .bot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+        }
+
+        .bot-card.cashout {
+            border-color: var(--cashout);
+            border-image: linear-gradient(45deg, var(--cashout), #6BB9F0, var(--cashout)) 1;
+        }
+
+        .bot-card.predictor {
+            border-color: var(--predictor);
+            border-image: linear-gradient(45deg, var(--predictor), #BB8FCE, var(--predictor)) 1;
+        }
+
+        .bot-banner {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bot-banner.cashout {
+            background: linear-gradient(45deg, #1a2a3a, var(--cashout), #1a2a3a);
+        }
+
+        .bot-banner.predictor {
+            background: linear-gradient(45deg, #2a1a3a, var(--predictor), #2a2a3a);
+        }
+
+        /* Container para imagem do bot */
+        .bot-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bot-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .bot-card:hover .bot-image {
+            transform: scale(1.05);
+        }
+
+        /* Fallback para ícone se imagem não carregar */
+        .bot-banner-icon {
+            font-size: 70px;
+            color: white;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.7));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .bot-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--gold);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 2px solid var(--gold);
+            z-index: 2;
+        }
+
+        .bot-content {
+            padding: 25px;
+        }
+
+        .bot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .bot-info h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--premium));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bot-description {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .bot-rating {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bot-features {
+            margin: 20px 0;
+        }
+
+        .bot-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .bot-feature-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateX(5px);
+        }
+
+        .bot-feature-icon {
+            margin-right: 12px;
+            font-size: 18px;
+            color: var(--accent);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .bot-price-section {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .bot-price-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .bot-price {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .bot-price-small {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .bot-button {
+            width: 100%;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .bot-button.cashout {
+            background: linear-gradient(45deg, var(--cashout), #6BB9F0);
+            color: white;
+        }
+
+        .bot-button.predictor {
+            background: linear-gradient(45deg, var(--predictor), #BB8FCE);
+            color: white;
+        }
+
+        .bot-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .bot-button.cashout:hover {
+            background: linear-gradient(45deg, #6BB9F0, var(--cashout));
+        }
+
+        .bot-button.predictor:hover {
+            background: linear-gradient(45deg, #BB8FCE, var(--predictor));
+        }
+
+        /* Bottom nav */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.95); padding: 10px 0; border-top:2px solid var(--primary); z-index:3000;
+        }
+        .nav-items { display:flex; justify-content:space-around; align-items:center; max-width:100%; margin:0 auto; }
+        .nav-item { display:flex; flex-direction:column; align-items:center; color:var(--light); text-decoration:none; font-size:10px; padding:4px; cursor:pointer; transition: all 0.3s ease; }
+        .nav-icon { font-size:16px; margin-bottom:3px; }
+        .nav-item.active { color: var(--primary); transform: translateY(-5px); }
+        .nav-label { font-size:10px; font-weight:bold; }
     </style>
 </head>
 <body>
@@ -730,9 +949,7 @@
                 <div class="info-title">PROTEÇÃO</div>
                 <div class="info-value protection-value" id="protectionValue">SSL 256-bit</div>
             </div>
-            
             <div class="divider"></div>
-            
             <div class="info-item">
                 <div class="info-icon"><i class="fas fa-chart-line"></i></div>
                 <div class="info-title">SAÍDA</div>
@@ -753,9 +970,7 @@
                     </button>
                 </div>
                 <div class="ad-content">
-                    <div class="ad-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
+                    <div class="ad-icon"><i class="fas fa-rocket"></i></div>
                     <div class="ad-text">
                         <div class="ad-title">BOT PRO - ESTRATÉGIAS AVANÇADAS</div>
                         <div class="ad-description">Desbloqueie análises preditivas, automação completa e suporte premium 24/7</div>
@@ -791,281 +1006,493 @@
         </div>
     </div>
 
-    <!-- Seção Casas com PROMOÇÕES -->
+    <!-- Seção Casas - MANTIDA ORIGINAL -->
     <div class="section" id="casasSection">
         <div class="section-header">
-            <div class="section-title">🎰 CASAS PREMIUM COM PROMOÇÕES</div>
-            <button class="section-close" onclick="closeSection('casasSection')">
-                <i class="fas fa-times"></i>
-            </button>
+            <div class="section-title">CASAS PREMIUM COM PROMOÇÕES</div>
+            <button class="section-close" onclick="closeSection('casasSection')"><i class="fas fa-times"></i></button>
         </div>
-        
+
         <div class="section-content">
             <div class="houses-grid">
-                <!-- Casa 1: PLACARD-BET -->
+                <!-- Placard -->
                 <div class="house-card placard">
-                    <div class="promo-banner">🔥 OFERTA ESPECIAL</div>
+                    <div class="promo-banner">OFERTA ESPECIAL</div>
                     <div class="house-banner placard">
-                        <div class="house-banner-icon">
-                            <i class="fas fa-fire"></i>
-                        </div>
+                        <div class="house-banner-icon"><i class="fas fa-fire"></i></div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
                                 <h2>PLACARD-BET</h2>
-                                <div class="house-description">
-                                    Casa oficial de Moçambique com as melhores odds do mercado!
-                                </div>
+                                <div class="house-description">Casa oficial de Moçambique com as melhores odds do mercado.</div>
                             </div>
                             <div class="house-rating">⭐ 4.9</div>
                         </div>
-                        
-                        <!-- PROMOÇÃO DESTAQUE -->
                         <div class="promo-highlight">
-                            <div class="promo-title">
-                                <i class="fas fa-gift"></i> BÔNUS DE BOAS-VINDAS
-                            </div>
+                            <div class="promo-title">BÔNUS DE BOAS-VINDAS</div>
                             <div class="promo-text">
                                 <span class="promo-value">200% ATÉ 10.000 MT</span><br>
-                                + 50 GIROS GRÁTIS no registro!
+                                + 50 GIROS GRÁTIS no registro.
                             </div>
                             <div class="promo-timer">
                                 <div class="timer-title">OFERTA TERMINA EM:</div>
                                 <div class="timer-display" id="timerPlacard">23:59:59</div>
                             </div>
                         </div>
-                        
                         <div class="house-features">
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-bolt"></i></div>
-                                <div>Saques em <strong>APENAS 3 MINUTOS</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-coins"></i></div>
-                                <div>Cashback de <strong>15% TODA SEMANA</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div>
-                                <div>Licença oficial de Moçambique</div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-headset"></i></div>
-                                <div>Suporte 24/7 em Português</div>
-                            </div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-bolt"></i></div><div>Saques em <strong>APENAS 3 MINUTOS</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-coins"></i></div><div>Cashback de <strong>15% TODA SEMANA</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div><div>Licença oficial de Moçambique</div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-headset"></i></div><div>Suporte 24/7 em Português</div></div>
                         </div>
-                        
-                        <button class="access-button placard" onclick="accessHouse('placard')">
-                            <i class="fas fa-external-link-alt"></i> GANHE 200% DE BÔNUS AGORA!
-                        </button>
+                        <button class="access-button placard" onclick="accessHouse('placard')"><i class="fas fa-external-link-alt"></i> GANHE 200% DE BÔNUS AGORA!</button>
                     </div>
                 </div>
-                
-                <!-- Casa 2: MEGAGAME -->
+
+                <!-- Megagame -->
                 <div class="house-card megagame">
-                    <div class="promo-banner">🎁 +100% BÔNUS</div>
+                    <div class="promo-banner">+100% BÔNUS</div>
                     <div class="house-banner megagame">
-                        <div class="house-banner-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
+                        <div class="house-banner-icon"><i class="fas fa-gamepad"></i></div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
                                 <h2>MEGAGAME</h2>
-                                <div class="house-description">
-                                    Plataforma premium com cassino ao vivo e jogos exclusivos!
-                                </div>
+                                <div class="house-description">Plataforma premium com cassino ao vivo e jogos exclusivos.</div>
                             </div>
                             <div class="house-rating">⭐ 4.8</div>
                         </div>
-                        
-                        <!-- PROMOÇÃO DESTAQUE -->
                         <div class="promo-highlight">
-                            <div class="promo-title">
-                                <i class="fas fa-trophy"></i> OFERTA EXCLUSIVA
-                            </div>
-                            <div class="promo-text">
-                                <span class="promo-value">100% BÔNUS + 100 GIROS</span><br>
-                                Apenas para novos jogadores!
-                            </div>
-                            <div class="promo-timer">
-                                <div class="timer-title">TEMPO LIMITADO:</div>
-                                <div class="timer-display" id="timerMegagame">23:59:59</div>
-                            </div>
+                            <div class="promo-title">OFERTA EXCLUSIVA</div>
+                            <div class="promo-text"><span class="promo-value">100% BÔNUS + 100 GIROS</span><br>Apenas para novos jogadores.</div>
+                            <div class="promo-timer"><div class="timer-title">TEMPO LIMITADO:</div><div class="timer-display" id="timerMegagame">23:59:59</div></div>
                         </div>
-                        
                         <div class="house-features">
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-crown"></i></div>
-                                <div>Programa VIP com <strong>PRÊMIOS DIÁRIOS</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-video"></i></div>
-                                <div>Cassino ao vivo com <strong>DEALERS REAIS</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-gift"></i></div>
-                                <div>Presentes surpresa <strong>TODA QUINTA-FEIRA</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                                <div>App otimizado para Aviator</div>
-                            </div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-crown"></i></div><div>Programa VIP com <strong>PRÊMIOS DIÁRIOS</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-video"></i></div><div>Cassino ao vivo com <strong>DEALERS REAIS</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-gift"></i></div><div>Presentes surpresa <strong>TODA QUINTA-FEIRA</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-mobile-alt"></i></div><div>App otimizado para Aviator</div></div>
                         </div>
-                        
-                        <button class="access-button megagame" onclick="accessHouse('megagame')">
-                            <i class="fas fa-external-link-alt"></i> RECEBA 100% + 100 GIROS!
-                        </button>
+                        <button class="access-button megagame" onclick="accessHouse('megagame')"><i class="fas fa-external-link-alt"></i> RECEBA 100% + 100 GIROS!</button>
                     </div>
                 </div>
-                
-                <!-- Casa 3: OLÁ-BET -->
+
+                <!-- Olá-bet -->
                 <div class="house-card olabet">
-                    <div class="promo-banner">💎 PRIMEIRO DEPÓSITO</div>
+                    <div class="promo-banner">PRIMEIRO DEPÓSITO</div>
                     <div class="house-banner olabet">
-                        <div class="house-banner-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
+                        <div class="house-banner-icon"><i class="fas fa-gem"></i></div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
                                 <h2>OLÁ-BET</h2>
-                                <div class="house-description">
-                                    Nova casa com interface moderna e promoções incríveis!
-                                </div>
+                                <div class="house-description">Nova casa com interface moderna e promoções incríveis.</div>
                             </div>
                             <div class="house-rating">⭐ 4.7</div>
                         </div>
-                        
-                        <!-- PROMOÇÃO DESTAQUE -->
                         <div class="promo-highlight">
-                            <div class="promo-title">
-                                <i class="fas fa-star"></i> PROMOÇÃO RELÂMPAGO
-                            </div>
-                            <div class="promo-text">
-                                <span class="promo-value">150% DE BÔNUS</span><br>
-                                + Aposta grátis de 50 MT no primeiro depósito!
-                            </div>
-                            <div class="promo-timer">
-                                <div class="timer-title">ACABA EM:</div>
-                                <div class="timer-display" id="timerOlabet">23:59:59</div>
-                            </div>
+                            <div class="promo-title">PROMOÇÃO RELÂMPAGO</div>
+                            <div class="promo-text"><span class="promo-value">150% DE BÔNUS</span><br>+ Aposta grátis de 50 MT no primeiro depósito.</div>
+                            <div class="promo-timer"><div class="timer-title">ACABA EM:</div><div class="timer-display" id="timerOlabet">23:59:59</div></div>
                         </div>
-                        
                         <div class="house-features">
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-rocket"></i></div>
-                                <div>Registro em <strong>APENAS 30 SEGUNDOS</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-money-bill-wave"></i></div>
-                                <div>Depósito mínimo de <strong>APENAS 10 MT</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-chart-line"></i></div>
-                                <div>Odds aumentadas para <strong>AVIATOR</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-award"></i></div>
-                                <div>Cashback de <strong>20% nas segundas-feiras</strong></div>
-                            </div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-rocket"></i></div><div>Registro em <strong>APENAS 30 SEGUNDOS</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-money-bill-wave"></i></div><div>Depósito mínimo de <strong>APENAS 10 MT</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-chart-line"></i></div><div>Odds aumentadas para <strong>AVIATOR</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-award"></i></div><div>Cashback de <strong>20% nas segundas-feiras</strong></div></div>
                         </div>
-                        
-                        <button class="access-button olabet" onclick="accessHouse('olabet')">
-                            <i class="fas fa-external-link-alt"></i> GANHE 150% + APOSTA GRÁTIS!
-                        </button>
+                        <button class="access-button olabet" onclick="accessHouse('olabet')"><i class="fas fa-external-link-alt"></i> GANHE 150% + APOSTA GRÁTIS!</button>
                     </div>
                 </div>
-                
-                <!-- Casa 4: TXUNA-BET -->
+
+                <!-- Txuna -->
                 <div class="house-card txuna">
-                    <div class="promo-banner">🚀 BÔNUS VIP</div>
+                    <div class="promo-banner">BÔNUS VIP</div>
                     <div class="house-banner txuna">
-                        <div class="house-banner-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
+                        <div class="house-banner-icon"><i class="fas fa-rocket"></i></div>
                     </div>
                     <div class="house-content">
                         <div class="house-header">
                             <div class="house-info">
                                 <h2>TXUNA-BET</h2>
-                                <div class="house-description">
-                                    Casa preferida dos jogadores de Aviator com suporte premium!
-                                </div>
+                                <div class="house-description">Casa preferida dos jogadores de Aviator com suporte premium.</div>
                             </div>
                             <div class="house-rating">⭐ 4.9</div>
                         </div>
-                        
-                        <!-- PROMOÇÃO DESTAQUE -->
                         <div class="promo-highlight">
-                            <div class="promo-title">
-                                <i class="fas fa-crown"></i> OFERTA VIP EXCLUSIVA
-                            </div>
-                            <div class="promo-text">
-                                <span class="promo-value">ATÉ 500% DE BÔNUS</span><br>
-                                + Torneios semanais com prêmios em dinheiro!
-                            </div>
-                            <div class="promo-timer">
-                                <div class="timer-title">PROMOÇÃO VIP:</div>
-                                <div class="timer-display" id="timerTxuna">23:59:59</div>
-                            </div>
+                            <div class="promo-title">OFERTA VIP EXCLUSIVA</div>
+                            <div class="promo-text"><span class="promo-value">ATÉ 500% DE BÔNUS</span><br>+ Torneios semanais com prêmios em dinheiro.</div>
+                            <div class="promo-timer"><div class="timer-title">PROMOÇÃO VIP:</div><div class="timer-display" id="timerTxuna">23:59:59</div></div>
                         </div>
-                        
                         <div class="house-features">
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-bolt"></i></div>
-                                <div>Saques <strong>INSTANTÂNEOS 24/7</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-users"></i></div>
-                                <div>Torneios de Aviator com <strong>PRÊMIOS DIÁRIOS</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-percentage"></i></div>
-                                <div>Cashback automático de <strong>10% TODO DIA</strong></div>
-                            </div>
-                            <div class="house-feature">
-                                <div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div>
-                                <div>Conta verificada em <strong>5 MINUTOS</strong></div>
-                            </div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-bolt"></i></div><div>Saques <strong>INSTANTÂNEOS 24/7</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-users"></i></div><div>Torneios de Aviator com <strong>PRÊMIOS DIÁRIOS</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-percentage"></i></div><div>Cashback automático de <strong>10% TODO DIA</strong></div></div>
+                            <div class="house-feature"><div class="house-feature-icon"><i class="fas fa-shield-alt"></i></div><div>Conta verificada em <strong>5 MINUTOS</strong></div></div>
                         </div>
-                        
-                        <button class="access-button txuna" onclick="accessHouse('txuna')">
-                            <i class="fas fa-external-link-alt"></i> ATÉ 500% BÔNUS VIP!
-                        </button>
+                        <button class="access-button txuna" onclick="accessHouse('txuna')"><i class="fas fa-external-link-alt"></i> ATÉ 500% BÔNUS VIP!</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="guarantee-section">
-                <div class="guarantee-title">🎯 PORQUE ESCOLHER NOSSAS CASAS PREMIUM</div>
+                <div class="guarantee-title">PORQUE ESCOLHER NOSSAS CASAS PREMIUM</div>
                 <div class="guarantee-items">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
-                        <div><strong>BÔNUS EXCLUSIVOS</strong> - Promoções que você não encontra em outros lugares</div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>BÔNUS EXCLUSIVOS</strong> - Promoções únicas</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>SUPORTE PRIORITÁRIO</strong> - Atendimento rápido</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>SAQUES RÁPIDOS</strong> - Até 5 minutos</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>SEGURANÇA GARANTIDA</strong> - Licenciadas</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Gestão - MELHORADA -->
+    <div class="section" id="gestaoSection">
+        <div class="section-header">
+            <div class="section-title">Gestão de Banca Profissional</div>
+            <button class="section-close" onclick="closeSection('gestaoSection')"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="section-content">
+            <div class="management-section">
+                <!-- Calculadora -->
+                <div class="calc-card">
+                    <div class="calc-header">
+                        <div class="calc-icon"><i class="fas fa-calculator"></i></div>
+                        <div>
+                            <h3 class="calc-title">Calculadora de Gestão</h3>
+                            <div class="calc-subtitle">Calcule o percentual ideal da sua aposta baseado na sua banca</div>
+                        </div>
                     </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
-                        <div><strong>SUPORTE PRIORITÁRIO</strong> - Atendimento rápido para nossos indicados</div>
+
+                    <div class="calc-input-group">
+                        <label class="calc-label">
+                            <span class="calc-label-icon"><i class="fas fa-wallet"></i></span>
+                            Valor da banca (MT)
+                        </label>
+                        <input type="number" id="bancaInput" class="calc-input" placeholder="Ex: 1000" min="0" step="0.01">
                     </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
-                        <div><strong>SAQUES RÁPIDOS</strong> - Seu dinheiro na conta em até 5 minutos</div>
+
+                    <div class="calc-input-group">
+                        <label class="calc-label">
+                            <span class="calc-label-icon"><i class="fas fa-coins"></i></span>
+                            Valor da aposta (MT)
+                        </label>
+                        <input type="number" id="apostaInput" class="calc-input" placeholder="Ex: 20" min="0" step="0.01">
                     </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon"><i class="fas fa-check-circle"></i></div>
-                        <div><strong>SEGURANÇA GARANTIDA</strong> - Todas as casas são licenciadas e regulamentadas</div>
+
+                    <button class="calc-button" onclick="calcularGestao()">
+                        <i class="fas fa-chart-line"></i> Calcular Gestão
+                    </button>
+
+                    <div id="resultadoGestao" class="calc-result">
+                        <div class="result-header">
+                            <span class="result-icon"><i class="fas fa-chart-pie"></i></span>
+                            <span class="result-title">Resultado da Análise</span>
+                        </div>
+
+                        <div class="result-line">
+                            <span class="result-label">Percentual da aposta:</span>
+                            <span class="result-value percent-value" id="percentualAposta">0.00%</span>
+                        </div>
+
+                        <div class="result-line">
+                            <span class="result-label">Classificação de risco:</span>
+                            <span class="result-value">
+                                <span class="risk-indicator risk-low" id="riscoAposta">Baixo</span>
+                            </span>
+                        </div>
+
+                        <div class="result-line">
+                            <span class="result-label">Recomendação:</span>
+                            <span class="result-value" id="recomendacaoAposta">Aposta segura dentro da gestão profissional.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefícios da Gestão -->
+                <div>
+                    <div class="calc-card">
+                        <div class="calc-header">
+                            <div class="calc-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h3 class="calc-title">Por que Gestão é Crucial</h3>
+                                <div class="calc-subtitle">Princípios fundamentais para proteger e multiplicar sua banca</div>
+                            </div>
+                        </div>
+
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-percentage"></i></div>
+                                <div class="benefit-title">Regra dos 2%</div>
+                                <div class="benefit-description">Nunca aposte mais de 2% da sua banca total em uma única jogada.</div>
+                            </div>
+
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="benefit-title">Progressão Controlada</div>
+                                <div class="benefit-description">Aumente sua aposta apenas após lucros consistentes e comprovados.</div>
+                            </div>
+
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-stop-circle"></i></div>
+                                <div class="benefit-title">Stop Loss Diário</div>
+                                <div class="benefit-description">Defina um limite máximo de perda diária para evitar prejuízos maiores.</div>
+                            </div>
+
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
+                                <div class="benefit-title">Take Profit Realista</div>
+                                <div class="benefit-description">Estabeleça metas de lucro alcançáveis baseadas em sua banca inicial.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Seções anteriores permanecem iguais... -->
+    <!-- Seção Curso - MELHORADA -->
+    <div class="section" id="cursoSection">
+        <div class="section-header">
+            <div class="section-title">Curso Avançado de Estratégias</div>
+            <button class="section-close" onclick="closeSection('cursoSection')"><i class="fas fa-times"></i></button>
+        </div>
 
-    <!-- Navegação Inferior - SEMPRE VISÍVEL -->
+        <div class="section-content">
+            <div class="course-section">
+                <div class="course-card">
+                    <div class="course-badge">MAIS VENDIDO</div>
+
+                    <div class="course-header">
+                        <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h2 class="course-title">Método Rainha do Aviator</h2>
+                            <div class="course-subtitle">Domine as estratégias mais avançadas do mercado com nosso treinamento completo</div>
+                        </div>
+                    </div>
+
+                    <div class="course-highlight">
+                        <div class="promo-title"><i class="fas fa-bolt"></i> OFERTA ESPECIAL: BOT VIP INCLUSO</div>
+                        <div class="promo-text">Adquira agora e receba gratuitamente o acesso ao nosso Bot VIP de análises preditivas.</div>
+                    </div>
+
+                    <p class="course-description">
+                        Este não é apenas mais um curso. É um sistema completo de aprendizado desenvolvido por jogadores profissionais
+                        que já transformaram milhares de iniciantes em experts do Aviator. Com metodologia prática e resultados
+                        comprovados, você dominará desde os fundamentos até as estratégias mais avançadas do mercado.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-video"></i></div>
+                            <div class="feature-text">Vídeo aulas gravadas com <span class="feature-highlight">análises em tempo real</span> de jogadas profissionais</div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                            <div class="feature-text">Bot VIP incluído gratuitamente com <span class="feature-highlight">análises preditivas</span></div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div class="feature-text">Sala de operações ao vivo via <span class="feature-highlight">video call com mentores</span></div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="feature-text">Estratégias de <span class="feature-highlight">gestão profissional</span> para multiplicação segura da banca</div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                            <div class="feature-text">Suporte <span class="feature-highlight">priority 24/7</span> com nossos especialistas</div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="feature-text">Acesso via <span class="feature-highlight">app exclusivo</span> para acompanhamento em qualquer lugar</div>
+                        </div>
+                    </div>
+
+                    <div class="course-price">999 MT</div>
+
+                    <button class="course-button" onclick="comprarCurso()">
+                        <i class="fas fa-lock"></i> GARANTIR MEU ACESSO AGORA
+                    </button>
+
+                    <div class="promo-timer" style="margin-top: 20px;">
+                        <div class="timer-title">OFERTA POR TEMPO LIMITADO:</div>
+                        <div class="timer-display" id="timerCurso">23:59:59</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Bot Pago - COM IMAGEM DO AVIATOR PREDICTOR -->
+    <div class="section" id="botPagoSection">
+        <div class="section-header">
+            <div class="section-title">Bots de Alta Performance</div>
+            <button class="section-close" onclick="closeSection('botPagoSection')"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="section-content">
+            <div class="bot-grid">
+                <!-- BOT 1 - SISTEMA CASHOUT -->
+                <div class="bot-card cashout">
+                    <div class="bot-banner cashout">
+                        <div class="bot-image-container">
+                            <img src="https://via.placeholder.com/400x160/1a2a3a/4A90E2?text=SISTEMA+CASHOUT+PRO" 
+                                 alt="Sistema Cashout Pro" 
+                                 class="bot-image"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback para ícone se imagem não carregar -->
+                            <div class="bot-banner-icon" style="display: none;">
+                                <i class="fas fa-cash-register"></i>
+                            </div>
+                        </div>
+                        <div class="bot-tag">4 EM 1</div>
+                    </div>
+
+                    <div class="bot-content">
+                        <div class="bot-header">
+                            <div class="bot-info">
+                                <h3>Sistema Cashout Pro</h3>
+                                <div class="bot-description">
+                                    Sistema profissional multicontas capaz de operar com quatro robôs simultâneos
+                                    dentro da mesma aplicação. Maximize seus ganhos com automação inteligente.
+                                </div>
+                            </div>
+                            <div class="bot-rating">⭐ 4.8</div>
+                        </div>
+
+                        <div class="bot-features">
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-layer-group"></i></div>
+                                <div>Contém <strong>4 robôs avançados</strong> na mesma aplicação</div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-plane"></i></div>
+                                <div>Robô Aviator com <strong>análise inteligente</strong> e automação completa</div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-gem"></i></div>
+                                <div>Robô Mines com <strong>leitura otimizada</strong> de padrões ocultos</div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-bullseye"></i></div>
+                                <div>Robô 100% certeiro com <strong>assertividade máxima</strong> validada</div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-clock"></i></div>
+                                <div>Acesso válido por <strong>1 dia completo</strong> (24 horas)</div>
+                            </div>
+                        </div>
+
+                        <div class="bot-price-section">
+                            <div class="bot-price-label">INVESTIMENTO</div>
+                            <div class="bot-price">500 MT</div>
+                            <div class="bot-price-small">Por apenas 24 horas de acesso premium</div>
+                        </div>
+
+                        <button class="bot-button cashout" onclick="comprarCashout()">
+                            <i class="fas fa-shopping-cart"></i> COMPRAR SISTEMA CASHOUT
+                        </button>
+                    </div>
+                </div>
+
+                <!-- BOT 2 - PREDICTOR APP COM SUA IMAGEM -->
+                <div class="bot-card predictor">
+                    <div class="bot-banner predictor">
+                        <div class="bot-image-container">
+                            <!-- IMAGEM DO AVIATOR PREDICTOR -->
+                            <img src="https://i.ibb.co/Gfh8f6zP/Aviator-Crash-Predictor-APK-for-Android-Download-PGYER-APKHUB-1143222108.png" 
+                                 alt="Aviator Predictor App AI" 
+                                 class="bot-image"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback para ícone se imagem não carregar -->
+                            <div class="bot-banner-icon" style="display: none;">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="bot-tag">INTELIGÊNCIA AI</div>
+                    </div>
+
+                    <div class="bot-content">
+                        <div class="bot-header">
+                            <div class="bot-info">
+                                <h3>Aviator Crash Predictor Pro</h3>
+                                <div class="bot-description">
+                                    Aplicativo exclusivo com tecnologia de inteligência artificial aprimorada para
+                                    leitura preditiva no Aviator. Identifica padrões ocultos com precisão cirúrgica
+                                    e análise de crashes em tempo real.
+                                </div>
+                            </div>
+                            <div class="bot-rating">⭐ 4.9</div>
+                        </div>
+
+                        <div class="bot-features">
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-chart-line"></i></div>
+                                <div>Análise avançada dos <strong>ciclos do Aviator</strong> em tempo real</div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <div>Aplicativo exclusivo <strong>otimizado para máximo desempenho</strong></div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div>Tecnologia aprimorada com <strong>alta precisão e segurança</strong></div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-check-double"></i></div>
+                                <div>Assertividade que alcança <strong>níveis próximos de 100%</strong></div>
+                            </div>
+
+                            <div class="bot-feature-item">
+                                <div class="bot-feature-icon"><i class="fas fa-clock"></i></div>
+                                <div>Acesso válido por <strong>2 dias completos</strong> (48 horas)</div>
+                            </div>
+                        </div>
+
+                        <div class="bot-price-section">
+                            <div class="bot-price-label">INVESTIMENTO</div>
+                            <div class="bot-price">699 MT</div>
+                            <div class="bot-price-small">Por 48 horas de acesso à inteligência preditiva</div>
+                        </div>
+
+                        <button class="bot-button predictor" onclick="comprarPredictor()">
+                            <i class="fas fa-bolt"></i> COMPRAR PREDICTOR APP
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-section" style="margin-top: 30px;">
+                <div class="guarantee-title">GARANTIA DE PERFORMANCE</div>
+                <div class="guarantee-items">
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>FUNCIONAMENTO 24/7</strong> - Bots otimizados para operação contínua</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>SUPORTE TÉCNICO</strong> - Equipe especializada para dúvidas e configurações</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>ATUALIZAÇÕES GRÁTIS</strong> - Melhorias constantes sem custo adicional</div></div>
+                    <div class="guarantee-item"><div class="guarantee-icon"><i class="fas fa-check-circle"></i></div><div><strong>SEGURANÇA TOTAL</strong> - Sem coleta de dados pessoais ou bancários</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação Inferior -->
     <nav class="bottom-nav">
         <div class="nav-items">
             <a href="#" class="nav-item" onclick="showSection('casasSection')">
@@ -1092,10 +1519,34 @@
     </nav>
 
     <script>
-        // Proteções aleatórias
+        // Função para carregar imagens dinamicamente
+        function loadBotImages() {
+            // URLs para as imagens dos bots
+            const botImages = {
+                cashout: 'URL_DA_IMAGEM_DO_SISTEMA_CASHOUT_AQUI', // Você vai substituir isso
+                predictor: 'https://i.ibb.co/Gfh8f6zP/Aviator-Crash-Predictor-APK-for-Android-Download-PGYER-APKHUB-1143222108.png' // SUA IMAGEM JÁ ESTÁ AQUI
+            };
+            
+            // Se as URLs forem fornecidas, atualiza as imagens
+            if (botImages.cashout && botImages.cashout !== 'URL_DA_IMAGEM_DO_SISTEMA_CASHOUT_AQUI') {
+                const cashoutImg = document.querySelector('.bot-card.cashout .bot-image');
+                if (cashoutImg) {
+                    cashoutImg.src = botImages.cashout;
+                }
+            }
+            
+            if (botImages.predictor && botImages.predictor !== 'URL_DA_IMAGEM_DO_PREDICTOR_APP_AQUI') {
+                const predictorImg = document.querySelector('.bot-card.predictor .bot-image');
+                if (predictorImg) {
+                    predictorImg.src = botImages.predictor;
+                }
+            }
+        }
+
+        // Mantenho todas as funções JavaScript originais
         const protections = [
             "SSL 256-bit",
-            "VPN Premium", 
+            "VPN Premium",
             "Proxy Seguro",
             "Firewall Duplo",
             "Criptografia 2x",
@@ -1104,17 +1555,16 @@
 
         function updateProtection() {
             const randomProt = protections[Math.floor(Math.random() * protections.length)];
-            document.getElementById('protectionValue').textContent = randomProt;
+            const el = document.getElementById('protectionValue');
+            if (el) el.textContent = randomProt;
         }
 
-        // Atualizar valor de saída
         function updateExitValue() {
             const exits = ['4,50X', '5,00X', '5,50X', '5,88X', '6,20X', '6,50X'];
-            document.getElementById('exitValue').textContent = 
-                exits[Math.floor(Math.random() * exits.length)];
+            const el = document.getElementById('exitValue');
+            if (el) el.textContent = exits[Math.floor(Math.random() * exits.length)];
         }
 
-        // Controles do WebView
         function goBack() {
             const frame = document.getElementById('siteFrame');
             try {
@@ -1131,176 +1581,224 @@
         }
 
         function hideLoading() {
-            document.getElementById('loadingOverlay').style.display = 'none';
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) overlay.style.display = 'none';
         }
 
         function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) overlay.style.display = 'flex';
         }
 
-        // Atualizar URL display
         function updateUrlDisplay() {
             const frame = document.getElementById('siteFrame');
             try {
                 const currentUrl = frame.contentWindow.location.href;
-                // Mostrar apenas o domínio principal
                 const urlObj = new URL(currentUrl);
                 document.getElementById('urlDisplay').textContent = urlObj.hostname;
-            } catch (e) {
-                // Ignora erro de cross-origin
-            }
+            } catch (e) {}
         }
 
-        // Sistema de anúncios premium
         function showAd() {
             const adPremium = document.getElementById('adPremium');
+            if (!adPremium) return;
             adPremium.style.display = 'block';
-            
-            // Fechar automaticamente após 20 segundos
-            setTimeout(() => {
-                closeAd();
-            }, 20000);
+            setTimeout(() => closeAd(), 20000);
         }
 
         function closeAd() {
             const adPremium = document.getElementById('adPremium');
-            adPremium.style.display = 'none';
+            if (adPremium) adPremium.style.display = 'none';
         }
 
         function buyPro() {
-            alert('🚀 Redirecionando para a página de compra do Bot Pro...');
+            alert('Redirecionando para a página de compra do Bot Pro...');
             closeAd();
+            window.open("https://seu-link-de-compra-aqui.com", "_blank");
         }
 
-        // Sistema de navegação entre seções
         function showSection(sectionId) {
-            // Esconder todas as seções
             const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Mostrar a seção solicitada
+            sections.forEach(section => section.style.display = 'none');
+
             if (sectionId !== 'home') {
-                document.getElementById(sectionId).style.display = 'flex';
+                const target = document.getElementById(sectionId);
+                if (target) target.style.display = 'flex';
             }
-            
-            // Atualizar navegação ativa
+
             const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+
             navItems.forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Encontrar e ativar o item de navegação correspondente
-            navItems.forEach(item => {
-                if (item.querySelector('.nav-label').textContent.toLowerCase() === sectionId.replace('Section', '').toLowerCase() || 
-                    (sectionId === 'home' && item.querySelector('.nav-label').textContent.toLowerCase() === 'home')) {
+                const label = item.querySelector('.nav-label');
+                if (!label) return;
+                const text = label.textContent.trim().toLowerCase();
+                const compare = sectionId.replace('Section', '').toLowerCase();
+                if (text === compare || (sectionId === 'home' && text === 'home')) {
                     item.classList.add('active');
                 }
             });
         }
 
         function closeSection(sectionId) {
-            document.getElementById(sectionId).style.display = 'none';
+            const el = document.getElementById(sectionId);
+            if (el) el.style.display = 'none';
             showSection('home');
         }
 
-        // Acesso às casas de apostas com promoções
         function accessHouse(house) {
-            let houseName, link, promoMessage;
-            
+            let link = null;
+            let msg = "";
             switch(house) {
                 case 'placard':
-                    houseName = "PLACARD-BET";
                     link = "https://media1.placard.co.mz/redirect.aspx?pid=5413&bid=1690";
-                    promoMessage = "🎉 PARABÉNS! Você ganhou 200% de bônus até 10.000 MT + 50 giros grátis!\n\nRedirecionando para o registro...";
+                    msg = "Parabéns! Redirecionando para PLACARD-BET...";
                     break;
                 case 'megagame':
-                    houseName = "MEGAGAME";
                     link = "https://www.megagamelive.com/affiliates/?btag=2233419";
-                    promoMessage = "🎮 EXCELENTE! 100% de bônus + 100 giros grátis esperando por você!\n\nPrepare-se para a melhor experiência de cassino!";
+                    msg = "Redirecionando para MEGAGAME...";
                     break;
                 case 'olabet':
-                    houseName = "OLÁ-BET";
                     link = "http://www.olabet.co.mz";
-                    promoMessage = "💎 FANTÁSTICO! 150% de bônus + aposta grátis de 50 MT ativada!\n\nSua jornada vencedora começa agora!";
+                    msg = "Redirecionando para OLÁ-BET...";
                     break;
                 case 'txuna':
-                    houseName = "TXUNA-BET";
                     link = "https://txunaplay.com/t2975f8c2";
-                    promoMessage = "🚀 INCRÍVEL! Bônus VIP de até 500% ativado para você!\n\nAcesso aos torneios exclusivos liberado!";
+                    msg = "Redirecionando para TXUNA-BET...";
                     break;
                 default:
                     return;
             }
-            
-            // Mostra mensagem de promoção
-            alert(promoMessage);
-            
-            // Abre o link em uma nova aba
-            setTimeout(() => {
-                window.open(link, '_blank');
-            }, 1500);
+            alert(msg);
+            setTimeout(() => window.open(link, '_blank'), 600);
         }
 
-        // Timer de promoções
+        function calcularGestao() {
+            const bancaInput = document.getElementById('bancaInput');
+            const apostaInput = document.getElementById('apostaInput');
+            const banca = parseFloat(bancaInput && bancaInput.value.replace(',', '.') || NaN);
+            const aposta = parseFloat(apostaInput && apostaInput.value.replace(',', '.') || NaN);
+
+            if (isNaN(banca) || isNaN(aposta) || banca <= 0 || aposta <= 0) {
+                alert("Preencha os valores corretamente.");
+                return;
+            }
+
+            const percentual = (aposta / banca) * 100;
+            let risco = "";
+            let recomendacao = "";
+            let riscoClass = "";
+
+            if (percentual <= 2) {
+                risco = "Baixo";
+                recomendacao = "Aposta segura dentro da gestão profissional. Continue assim!";
+                riscoClass = "risk-low";
+            } else if (percentual <= 5) {
+                risco = "Moderado";
+                recomendacao = "Aposta aceitável, mas já aumenta o risco. Considere reduzir um pouco.";
+                riscoClass = "risk-moderate";
+            } else if (percentual <= 10) {
+                risco = "Alto";
+                recomendacao = "Aposta alta — reveja sua gestão imediatamente.";
+                riscoClass = "risk-high";
+            } else {
+                risco = "Muito alto";
+                recomendacao = "Risco extremo — reduza a aposta urgentemente para proteger sua banca.";
+                riscoClass = "risk-very-high";
+            }
+
+            document.getElementById("percentualAposta").textContent = percentual.toFixed(2) + "%";
+            
+            const riscoElement = document.getElementById("riscoAposta");
+            riscoElement.textContent = risco;
+            riscoElement.className = "risk-indicator " + riscoClass;
+            
+            document.getElementById("recomendacaoAposta").textContent = recomendacao;
+            
+            const resultado = document.getElementById("resultadoGestao");
+            resultado.style.display = "block";
+            
+            resultado.style.animation = "none";
+            setTimeout(() => {
+                resultado.style.animation = "fadeIn 0.5s ease";
+            }, 10);
+        }
+
+        function comprarCurso() {
+            alert("Redirecionando para a página de compra do Curso Avançado...");
+            window.open("https://seu-link-de-compra-aqui.com/curso", "_blank");
+        }
+
+        function comprarCashout() {
+            alert("Redirecionando para compra do Sistema Cashout...");
+            window.open("https://seu-link-de-compra-aqui.com/cashout", "_blank");
+        }
+
+        function comprarPredictor() {
+            alert("Redirecionando para compra do Predictor App...");
+            window.open("https://seu-link-de-compra-aqui.com/predictor", "_blank");
+        }
+
         function startPromoTimers() {
-            function updateTimer(timerId, hours, minutes, seconds) {
-                const timerElement = document.getElementById(timerId);
-                const totalSeconds = hours * 3600 + minutes * 60 + seconds;
-                
+            function createCountdown(timerId, totalSecondsInit) {
+                const el = document.getElementById(timerId);
+                if (!el) return;
+                let totalSeconds = Math.max(0, Math.floor(totalSecondsInit));
+                el.textContent = formatHMS(totalSeconds);
                 const interval = setInterval(() => {
-                    const h = Math.floor(totalSeconds / 3600);
-                    const m = Math.floor((totalSeconds % 3600) / 60);
-                    const s = totalSeconds % 60;
-                    
-                    timerElement.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-                    
+                    totalSeconds--;
                     if (totalSeconds <= 0) {
                         clearInterval(interval);
-                        timerElement.textContent = "EXPIRADO!";
-                        timerElement.style.color = "#FF0000";
+                        el.textContent = "EXPIRADO!";
+                        el.style.color = "#FF0000";
+                        return;
                     }
+                    el.textContent = formatHMS(totalSeconds);
                 }, 1000);
             }
-            
-            // Inicializar timers para cada casa
-            updateTimer('timerPlacard', 23, 59, 59);
-            updateTimer('timerMegagame', 19, 45, 30);
-            updateTimer('timerOlabet', 16, 30, 15);
-            updateTimer('timerTxuna', 12, 15, 45);
+
+            function formatHMS(sec) {
+                const h = Math.floor(sec / 3600);
+                const m = Math.floor((sec % 3600) / 60);
+                const s = sec % 60;
+                return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            }
+
+            createCountdown('timerPlacard', 23*3600 + 59*60 + 59);
+            createCountdown('timerMegagame', 19*3600 + 45*60 + 30);
+            createCountdown('timerOlabet', 16*3600 + 30*60 + 15);
+            createCountdown('timerTxuna', 12*3600 + 15*60 + 45);
+            createCountdown('timerCurso', 8*3600 + 30*60 + 0);
         }
 
-        // Inicializar anúncios a cada 1 minuto
         function initAds() {
-            // Mostrar primeiro anúncio após 1 minuto
             setTimeout(showAd, 60000);
-            
-            // Configurar intervalo para mostrar anúncios a cada 1 minuto
-            setInterval(showAd, 700000);
+            setInterval(showAd, 60000);
         }
 
-        // Inicializar
+        // Inicialização global
         document.addEventListener('DOMContentLoaded', function() {
             updateProtection();
             updateExitValue();
             initAds();
             startPromoTimers();
-            
-            // Monitorar mudanças no iframe
+            loadBotImages(); // Carrega as imagens dos bots
+
             setInterval(updateUrlDisplay, 2000);
-            
-            // Atualizar proteção a cada 5 segundos
             setInterval(updateProtection, 5000);
-
-            // Atualizar saída a cada 25 segundos
             setInterval(updateExitValue, 25000);
-
-            // Esconder loading após 10 segundos máximo
             setTimeout(hideLoading, 10000);
-        });
 
-        // Funções restantes permanecem iguais...
+            document.querySelector('.calc-input')?.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--management)';
+            });
+
+            document.querySelector('.calc-input')?.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.style.borderColor = 'rgba(255,255,255,0.1)';
+                }
+            });
+        });
     </script>
 </body>
 </html>
