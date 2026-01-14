@@ -4,6 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BOT FREE ADS PRÓ</title>
+    
+    <!-- =========================================== -->
+    <!-- PROPELLERADS MONETIZATION SYSTEM -->
+    <!-- Zona Pop: 10465206 | Zona Push: 10465208 -->
+    <!-- =========================================== -->
+    
+    <!-- POP-UNDER CONFIG -->
+    <script type="text/javascript">
+        window.propeller_popunder = {
+            zone_id: 10465206,
+            frequency: 1,
+            delay: 30000,
+            onload: false,
+            respect_frequency: true
+        };
+    </script>
+    
+    <!-- PUSH NOTIFICATIONS -->
+    <script type="text/javascript">
+        (function() {
+            var pushScript = document.createElement('script');
+            pushScript.src = 'https://cdn.propellerads.com/propush.js?zone=10465208';
+            pushScript.async = true;
+            
+            pushScript.onload = function() {
+                if (window.propush) {
+                    window.propush.setModalText(
+                        '🚀 ALERTAS VIP DO AVIATOR!',
+                        'Ative para receber sinais dos bots premium e promoções exclusivas!'
+                    );
+                    window.propush.setButtonsText('✅ ATIVAR AGORA', '✖️ NÃO AGORA');
+                    window.propush.setIcon('https://cdn-icons-png.flaticon.com/512/1077/1077976.png');
+                    
+                    setTimeout(function() {
+                        if (window.propush.ask) {
+                            window.propush.ask();
+                        }
+                    }, 15000);
+                }
+            };
+            
+            setTimeout(function() {
+                document.head.appendChild(pushScript);
+            }, 10000);
+        })();
+    </script>
+    
+    <!-- POP-UNDER SCRIPT -->
+    <script type="text/javascript" src="https://cdn.propellerads.com/popunder.js" async></script>
+    
+    <!-- OTIMIZAÇÕES DE COMPORTAMENTO -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mostra pop quando usuário tenta sair
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 10 && window.propeller_popunder && window.propeller_popunder.show) {
+                setTimeout(function() {
+                    window.propeller_popunder.show();
+                }, 300);
+            }
+        });
+        
+        // Mostra pop após cliques importantes
+        document.addEventListener('click', function(e) {
+            var importantSelectors = ['.access-button', '.bot-button', '.course-button', '.ad-button', '.calc-button'];
+            var isImportant = importantSelectors.some(function(selector) {
+                return e.target.closest(selector);
+            });
+            
+            if (isImportant && window.propeller_popunder && window.propeller_popunder.show) {
+                setTimeout(function() {
+                    window.propeller_popunder.show();
+                }, 1000);
+            }
+        });
+    });
+    </script>
+    <!-- =========================================== -->
+    <!-- FIM PROPELLERADS -->
+    <!-- =========================================== -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +292,7 @@
         /* ANÚNCIO PREMIUM - NO TOPO COMO ORIGINAL */
         .ad-premium {
             position: absolute;
-            top: 20px; /* NO TOPO COMO ORIGINAL */
+            top: 20px;
             left: 10px;
             right: 10px;
             background: linear-gradient(135deg, 
@@ -227,7 +308,7 @@
             animation: premiumSlide 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
             backdrop-filter: blur(15px);
-            max-height: 140px; /* Tamanho bom para mensagens */
+            max-height: 140px;
             min-height: 140px;
         }
 
@@ -337,7 +418,7 @@
         
         .ad-description { 
             font-family: 'Poppins', sans-serif;
-            font-size: 13px; /* Aumentado para melhor leitura */
+            font-size: 13px;
             opacity:0.9; 
             line-height:1.4;
             overflow: hidden;
@@ -461,7 +542,7 @@
             background: linear-gradient(45deg, #FF0000, var(--secondary));
         }
 
-        /* WebView Container com mais espaço inferior */
+        /* WebView Container */
         .webview-container {
             flex: 1; 
             background: var(--professional-dark); 
@@ -1496,7 +1577,7 @@
             }
             
             .ad-premium {
-                top: 15px; /* Ajustado para mobile */
+                top: 15px;
                 padding: 12px;
                 max-height: 130px;
                 min-height: 130px;
@@ -1591,7 +1672,7 @@
             }
             
             .ad-premium {
-                top: 35px; /* Ajustado para tablet/desktop */
+                top: 35px;
                 padding: 18px;
                 max-height: 150px;
                 min-height: 150px;
@@ -1647,7 +1728,7 @@
             <div class="title">BOT FREE ADS PRÓ</div>
         </div>
 
-        <!-- Linha de Informações Profissional - COMPACTA E CENTRALIZADA -->
+        <!-- Linha de Informações Profissional -->
         <div class="info-row">
             <div class="info-item">
                 <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
@@ -1664,7 +1745,7 @@
 
         <!-- WebView Container Profissional -->
         <div class="webview-container">
-            <!-- Anúncio Premium - NO TOPO COMO ORIGINAL -->
+            <!-- Anúncio Premium -->
             <div class="ad-premium" id="adPremium">
                 <div class="ad-header">
                     <div class="ad-badge" id="adBadge">
@@ -1856,7 +1937,7 @@
 
         <div class="section-content">
             <div class="management-section">
-                <!-- Calculadora - MODIFICADA PARA INCENTIVAR APOSTAS ALTAS -->
+                <!-- Calculadora -->
                 <div class="calc-card">
                     <div class="calc-header">
                         <div class="calc-icon"><i class="fas fa-calculator"></i></div>
@@ -1919,7 +2000,7 @@
                     </div>
                 </div>
 
-                <!-- Benefícios da Gestão AGORA COM ÊNFASE EM APOSTAS ALTAS -->
+                <!-- Benefícios da Gestão -->
                 <div>
                     <div class="calc-card">
                         <div class="calc-header">
@@ -2266,7 +2347,7 @@
         const saidasUnicas = [...new Set(saidasAleatorias)];
         let saidaIndex = 0;
 
-        // Array de mensagens de anúncio de BOTS - MAIS VARIEDADE
+        // Array de mensagens de anúncio de BOTS
         const adBotMessages = [
             {
                 title: "BOTS QUE PREVEEM O AVIÃO!",
@@ -2342,7 +2423,7 @@
             }
         ];
 
-        // Array de mensagens de anúncio das CASAS - MAIS VARIEDADE
+        // Array de mensagens de anúncio das CASAS
         const adHouseMessages = [
             {
                 title: "GANHE 500% NA PLACARD!",
@@ -2381,46 +2462,6 @@
                 house: "txuna",
                 badge: "BÔNUS VIP",
                 icon: "rocket",
-                buttonText: "REGISTRAR",
-                link: "https://txunaplay.com/t2975f8c2"
-            },
-            {
-                title: "PLACARD: 500% DE BÔNUS!",
-                description: "Ganhe ate 500% de bônus no seu primeiro deposito de 100mt",
-                type: "house",
-                house: "placard",
-                badge: "SAQUE RÁPIDO",
-                icon: "bolt",
-                buttonText: "REGISTRAR",
-                link: "https://media1.placard.co.mz/redirect.aspx?pid=5413&bid=1690"
-            },
-            {
-                title: "MEGAGAME: CASSINO AO VIVO",
-                description: "Mas de 35 vô for Free,Registe-se agora ",
-                type: "house",
-                house: "megagame",
-                badge: "AO VIVO",
-                icon: "video",
-                buttonText: "REGISTRAR",
-                link: "https://www.megagamelive.com/affiliates/?btag=2233419"
-            },
-            {
-                title: "OLÁ-BET: DEPÓSITO 10 MT",
-                description: "Registro em 30 segundos, 200% de bônus de bõas vindas",
-                type: "house",
-                house: "olabet",
-                badge: "RÁPIDO",
-                icon: "rocket",
-                buttonText: "REGISTRAR",
-                link: "https://tracking.olabet.co.mz/C.ashx?btag=a_2739b_7c_&affid=2665&siteid=2739&adid=7&c="
-            },
-            {
-                title: "TXUNA: TORNEIOS DIÁRIOS",
-                description: "Prêmios em dinheiro todo dia,oferemos tambem chuva de mola no chat ao vivo ",
-                type: "house",
-                house: "txuna",
-                badge: "TORNEIOS",
-                icon: "trophy",
                 buttonText: "REGISTRAR",
                 link: "https://txunaplay.com/t2975f8c2"
             }
@@ -2469,7 +2510,7 @@
             saidaIndex = (saidaIndex + 1) % saidasUnicas.length;
         }
 
-        // Função para atualizar o anúncio com mensagem diferente
+        // Função para atualizar o anúncio
         function updateAdMessage() {
             const adTitle = document.getElementById('adTitle');
             const adDescription = document.getElementById('adDescription');
@@ -2480,17 +2521,16 @@
             
             if (!adTitle || !adDescription) return;
             
-            // Escolhe aleatoriamente entre os 3 tipos de anúncio
             const randomType = Math.random();
             let adArray;
             
-            if (randomType < 0.4) { // 40% de chance para BOTS
+            if (randomType < 0.4) {
                 adArray = adBotMessages;
                 adType = "bot";
-            } else if (randomType < 0.8) { // 40% de chance para CASAS
+            } else if (randomType < 0.8) {
                 adArray = adHouseMessages;
                 adType = "house";
-            } else { // 20% de chance para CURSO
+            } else {
                 adArray = adCourseMessages;
                 adType = "course";
             }
@@ -2498,20 +2538,15 @@
             const randomIndex = Math.floor(Math.random() * adArray.length);
             currentAd = adArray[randomIndex];
             
-            // Atualiza os elementos do anúncio
             adTitle.textContent = currentAd.title;
             adDescription.textContent = currentAd.description;
             
-            // Atualiza badge
             adBadge.innerHTML = `<i class="fas fa-${currentAd.icon}"></i> ${currentAd.badge}`;
             
-            // Atualiza ícone
             adIcon.className = `fas fa-${currentAd.icon}`;
             
-            // Atualiza botão
             adButtonText.textContent = currentAd.buttonText;
             
-            // Muda a cor do botão conforme o tipo
             if (adType === "house") {
                 adButton.style.background = "linear-gradient(45deg, var(--secondary), #FF0000)";
                 adButton.innerHTML = `<i class="fas fa-external-link-alt"></i> <span id="adButtonText">${currentAd.buttonText}</span>`;
@@ -2529,13 +2564,10 @@
             closeAd();
             
             if (adType === "bot") {
-                // Abre a seção de bots pagos
                 showSection('botPagoSection');
             } else if (adType === "house" && currentAd && currentAd.link) {
-                // Abre o link da casa de apostas em nova aba
                 window.open(currentAd.link, '_blank');
             } else if (adType === "course") {
-                // Abre a seção do curso
                 showSection('cursoSection');
             }
         }
@@ -2554,14 +2586,9 @@
 
         // Função para atualizar proteção
         function updateProtection() {
-            // Encontra o índice atual
             const currentValue = document.getElementById('protectionValue').textContent;
             const currentIndex = protections.indexOf(currentValue);
-            
-            // Calcula próximo índice
             const nextIndex = (currentIndex + 1) % protections.length;
-            
-            // Atualiza o texto
             document.getElementById('protectionValue').textContent = protections[nextIndex];
         }
 
@@ -2574,7 +2601,6 @@
             const adPremium = document.getElementById('adPremium');
             if (!adPremium) return;
             
-            // Atualiza a mensagem do anúncio antes de mostrar
             updateAdMessage();
             
             adPremium.style.display = 'block';
@@ -2656,7 +2682,7 @@
             }
         }
 
-        // CALCULADORA MODIFICADA PARA INCENTIVAR APOSTAS ALTAS
+        // CALCULADORA
         function calcularGestao() {
             const bancaInput = document.getElementById('bancaInput');
             const apostaInput = document.getElementById('apostaInput');
@@ -2696,11 +2722,9 @@
                 agressividadeClass = "risk-very-high";
             }
 
-            // Mostrar o potencial de ganho
             document.getElementById("potencialGanho").textContent = 
                 potencialGanho.toFixed(2) + " MT (" + percentualGanho.toFixed(1) + "%)";
             
-            // Agressividade
             const agressividadeElement = document.getElementById("agressividadeAposta");
             agressividadeElement.textContent = agressividade;
             agressividadeElement.className = "risk-indicator " + agressividadeClass;
@@ -2717,7 +2741,6 @@
         }
 
         function comprarCurso() {
-            // Mostra o popup de erro profissional
             showErrorPopup();
         }
 
@@ -2762,10 +2785,7 @@
         }
 
         function initAds() {
-            // Mostra o primeiro anúncio após 20 segundos
             setTimeout(showAd, 20000);
-            
-            // Mostra anúncios a cada 40 segundos (mais frequente)
             setInterval(showAd, 40000);
         }
 
@@ -2777,16 +2797,10 @@
             startPromoTimers();
             loadBotImages();
 
-            // Atualiza a saída a cada 25 segundos
             setInterval(updateExitValue, 25000);
-            
-            // Atualiza a proteção a cada 5 segundos
             setInterval(updateProtection, 5000);
-            
-            // Oculta loading após 10 segundos
             setTimeout(hideLoading, 10000);
 
-            // Adiciona o evento de focus/blur nos inputs
             document.querySelectorAll('.calc-input').forEach(input => {
                 input.addEventListener('focus', function() {
                     this.style.borderColor = 'var(--management)';
@@ -2799,8 +2813,13 @@
                 });
             });
 
-            // Inicializa a navegação ativa
             updateNavItems('home');
+            
+            // Log de inicialização do Propeller
+            console.log('🚀 Bot Free Ads Pró - Sistema carregado!');
+            console.log('📊 PropellerAds configurado com zonas:');
+            console.log('- Pop-under: 10465206');
+            console.log('- Push: 10465208');
         });
     </script>
 </body>
